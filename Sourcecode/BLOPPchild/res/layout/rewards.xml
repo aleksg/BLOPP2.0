@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" 
+    android:orientation="vertical"
+    android:gravity="center" >
+
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/displayRewardsTextView"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+		android:gravity="center"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:paddingTop="3dp"
+		android:paddingBottom="3dp"
+		android:text="@string/Empty" 
+		android:background="@drawable/star" >
+	</TextView>
+
+	<GridView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/rewardsView"
+	    android:numColumns="auto_fit"
+	    android:gravity="center"
+	    android:columnWidth="64dp"
+	    android:stretchMode="columnWidth"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent" >
+	</GridView>
+</LinearLayout>

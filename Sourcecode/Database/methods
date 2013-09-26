@@ -1,0 +1,14 @@
+LISTE OVER METODER:
+addChild(name, pers_num, num_health_states):
+    - add avatar
+    - add empty medical plan
+    - add health states
+    - create the child
+    
+addShopItem(slot_id, name, description):
+    - create the shop item
+    
+addMedicine(name, instructions_id)
+
+addMedicineInstructions(url)
+

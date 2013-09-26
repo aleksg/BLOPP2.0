@@ -1,0 +1,53 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="no.blopp.app.med"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="15" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    
+    <application
+        android:icon="@drawable/capp_icon"
+        android:label="CAPP"
+        android:theme="@style/AppTheme" >
+        <receiver android:name="no.blopp.app.med.services.OnBootReciever" android:label="OnBootReciever" >
+    		<intent-filter>  
+        		<action android:name="android.intent.action.BOOT_COMPLETED">  
+        		    </action>
+    		</intent-filter>  
+		</receiver>
+		<receiver
+    		android:name="no.blopp.app.med.services.AlarmUpdateReceiver" />
+        <activity
+            android:name=".activities.MainMenu"
+            android:icon="@drawable/capp_icon"
+            android:label="CAPP" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        
+        <activity android:name=".activities.TreatmentActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activities.ShopActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activities.SplashScreenActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activities.AvatarActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".activities.DistractionActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".activities.Statusbar" android:screenOrientation="portrait"></activity>
+        <activity android:name=".activities.AppManualActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".activities.AlarmActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".activities.AlarmReceiverActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".activities.DisplayRewardsActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".activities.MedicationInstructionsActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".activities.InstructionsActivity" android:screenOrientation="portrait"></activity>
+    </application>
+
+</manifest>

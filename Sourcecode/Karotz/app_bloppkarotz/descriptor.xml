@@ -1,0 +1,17 @@
+<descriptor>
+    <name>BLOPP</name>
+    <apikey>9d912b88-8b1e-422c-8afb-2d7cce08717a</apikey>
+    <version>1.0.7</version>
+    <accesses>
+        <access>file</access>
+        <access>tts</access>
+        <access>button</access>
+        <access>ears</access>
+        <access>led</access>
+        <access>http</access>
+        <access>rfid</access>
+        <access>multimedia</access>
+    </accesses>
+    <deployment>hosted</deployment>
+    <multiConf>false</multiConf>
+</descriptor>

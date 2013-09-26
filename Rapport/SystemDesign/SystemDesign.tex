@@ -1,0 +1,49 @@
+\chapter{System Design}
+\label{chap:systemDesign}
+In this chapter, we will describe the software architecture of the applications.
+We will focus on high level abstractions of the system. More detailed class diagrams of the system
+is found in Appendix \ref{chap:class-diagram}.
+
+\input{SystemDesign/ArchitecturalDescription}
+
+\section{Software architecture}
+\emph{``The Software Architecture of a program or computing system is the structure or structures of the system, which comprise
+software elements, the externally visible properties of those elements, and the relationships among them.''} \cite{bassclemetskazman}.
+ 
+In the following section, we will describe the architecture of the system according to the 4+1 View Model 
+introduced in Section \ref{sec:viewmodel}.
+
+
+The relevant stakeholders for the architecture is NAAF, Sykehusapotekene
+i Midt-Norge, NTNU, in addition to future and present developers. In this section, we will
+describe the architecture of the system through a Logical View, Development
+View and a Process View. We have not created a Physical View, a this is not usual for a software that does not run on some sort of special hardware. 
+The different views build upon the use cases defined in Section \ref{sec:useCases}
+
+
+\input{SystemDesign/LogicalView}
+\input{SystemDesign/NewDevelopmentView}
+
+\input{SystemDesign/ProcessView}
+\clearpage{}
+\section{Architecture Rationale}
+
+Choosing MVC has become a somewhat ``standard'' solution for these types of applications, and it was a successful pattern for our use as well.   
+The choice of making the database accessible through a webservice slowed down performance a bit, but we had to do this, since Karotz only
+supports access to the database through the webservice. 
+We were also not able to implement proper caching functionality, which could have improved performance severly. More information on this part
+is found in Chapter \ref{chap:furtherWork}. 
+
+We found it somewhat harder to implement good models 
+for the objects that is retrieved from the webservice, which has created a bit of overhead in the architecture.
+However, it has been easier to connect CAPP and GAPP together by retrieving data
+through the same webservice, and it was a working solution once we knew how to access it properly. 
+
+
+It is hard to predict how many users the system can handle once proper functionality for several children is implemented. 
+The webservice is developed with the intention of running at one server only, and so, the scalability of the system 
+is very dependent
+on the capabilties of this server (how many requests it can handle per time unit). If the software is to be depolyed on 
+several servers, the webservice needs to be rewritten. 
+
+\input{SystemDesign/Database/Database}

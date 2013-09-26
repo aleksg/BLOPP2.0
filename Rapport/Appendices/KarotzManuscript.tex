@@ -1,0 +1,123 @@
+\chapter{Karotz Manuscript}
+\label{apx:karotzManuscript}
+Table \ref{tab:karotzmanuscriptcodes} gives an overview of action sequences the Karotz takes based on a given
+medicine combination that is supposed to be taken at the same time.
+\begin{description}
+	\item[b] means blue medicine,
+	\item[o] means orange medicine,
+	\item[p] means purple medicine,
+	\item[the number] represents how many doses should be taken.
+\end{description}
+
+\begin{table}[ht]
+	\begin{center}
+		\begin{tabular}{|l|l|l|l|l|l|l|l|}
+			\hline
+			\bfseries{Medicine combinaton} & \bfseries{1b} & \bfseries{1o} & \bfseries{1p} & \bfseries{2b} & \bfseries{2o} & \bfseries{2p} & \bfseries{1b + 1o} \\
+			\hline
+			\bfseries{Sequence code} 	& 1s & 1s & 1s & 1s & 1s & 1s & 1s \\
+									 	& 2s & 2s & 2s & 2s & 2s & 2s & 2s \\
+									 	& 1b & 1o & 1p & 1b & 1o & 1p & 3s \\
+									 	& 2b & 2o & 2p & 2b & 2o & 2p & 1b \\
+									 	& 3b1& 3o1& 3p1& 3b2& 3o2& 3p2& 2b \\
+									 	& 4s & 4s & 4s & 4s & 4s & 4s & 3b1\\
+									 	& 6s & 6s & 6s & 5s & 5s & 5s & 4s \\
+									 	& 9s & 9s & 9s & 4s & 4s & 4s & 8s \\
+									 	& 7s1& 7s1& 7s1& 6s & 6s & 6s & 1o \\
+									 	&    &    &    & 9s & 9s & 9s & 2o \\
+									 	&    &    &    & 7s2& 7s2& 7s2& 3o1\\
+									 	&    &    &    &    &    &    & 4s \\
+									 	&    &    &    &    &    &    & 6s \\
+									 	&    &    &    &    &    &    & 9s \\
+									 	&    &    &    &    &    &    & 7s2\\
+		 	\hline
+		\end{tabular}
+		\caption{Manuscript actions for Karotz}
+		\label{tab:karotzmanuscriptcodes}
+	\end{center}
+\end{table}
+
+Table \ref{tab:karotzmanuscript} gives detailed information on what each code means, with a dialogue statement that the rabbit says and an activator that makes 
+the application go to the next item.
+
+%\begin{table}
+	\begin{center}
+		\begin{longtable}{|p{1.2cm}|p{13.5cm}|p{2cm}|}
+			\endfirsthead
+			\endhead
+			\endfoot
+			\caption{Manuscript for the Karotz}
+			\endlastfoot
+			\hline
+			\bfseries{Code} & \bfseries{Dialogue} & \bfseries{Activator} \\
+			\hline
+			1s & \specialcell{13.5cm}{Hei! Jeg heter BLIPP! N{\aa} er det tid for {\aa} ta pustemedisin! Trykk p{\aa} hodet mitt s{\aa} forteller jeg deg mer.\\
+							 	\emph{Hi! My name is BLIPP! Now it's time to take breathing medication! Press my head and I will tell you more.}} & Button \\
+			\hline
+			2s & \specialcell{13.5cm}{Hent en voksen som kan se p{\aa}, og hold den lille gule kaninen rett under nesen min. \\
+								\emph{Fetch an adult that can watch, and hold the small yellow rabbit directly beneath my nose.}} & Yellow nanoz\\
+			\hline
+			3s & \specialcell{13.5cm}{N{\aa} skal du ta to forskjellige medisiner. \\
+								\emph{Now you will take two different medicines.}} & Timeout: 2 seconds \\
+			\hline
+			4s & \specialcell{13.5cm}{N{\aa}r jeg sier ifra skal du trykke p{\aa} sprayen, og du skal puste rolig mens jeg teller til 10. Klar, ferdig, trykk! 1-2-3-4-5-6-7-8-9-10 \\
+								\emph{When I tell you to, you should press the spray and breathe calmly while I count to 10. Ready, set, push! 1-2-3-4-5-6-7-8-9-10}} & Timeout: 2 seconds \\
+			\hline
+			5s & \specialcell{13.5cm}{Flott! Bra jobba! Du har tatt den f{\o}rste dosen. Gj{\o}r klar for dose nummer to. Sett p{\aa} deg masken og gj{\o}r deg klar til {\aa} gj{\o}re det samme en gang til. Trykk p{\aa} hodet mitt n{\aa}r du er klar. \\
+								\emph{Excellent! Great job! You have taken the first dose. Get ready for dose number two. Put on the mask and get ready to do the same one more time. Push my head when you are ready.}} & Button \\
+			\hline
+			6s & \specialcell{13.5cm}{N{\aa} var du flink! \\
+								\emph{You were good now!}} & Timeout: 2 seconds \\
+			\hline
+			7s1& \specialcell{13.5cm}{Som bel{\o}nning f{\aa}r du 1 stjerne til skattekista di. \\
+								\emph{As reward you will get 1 star for your treasure chest.}} & \emph{DONE} \\
+			\hline
+			7s2& \specialcell{13.5cm}{Som bel{\o}nning f{\aa}r du 2 stjerner til skattekista di. \\
+								\emph{As reward you will get 2 stars for your treasure chest.}} & \emph{DONE} \\
+			\hline			
+			8s & \specialcell{13.5cm}{Da kan du hente den andre medisinen du skal ta. \\
+								\emph{Now you can fetch the second medicine you should take.}} & Timeout: 2 seconds \\
+			\hline
+			1b & \specialcell{13.5cm}{Hent den bl{\aa} medisinen og masken du puster i, og trykk p{\aa} hodet mitt n{\aa}r du har hentet dem. \\
+								\emph{Fetch the blue medication and the mask you breathe into, and push my head when you have fetched them.}} & Button \\
+			\hline
+			2b & \specialcell{13.5cm}{Rist den bl{\aa} medisinen! (ristelyd) Trykk p{\aa} hodet n{\aa}r du er klar. \\
+								\emph{Shake the blue medicine! (shaking sound) Push my head when you are ready.}} & Button \\
+			\hline
+			3b1& \specialcell{13.5cm}{Av den bl{\aa} medisinen skal du ta 1 puff. Sett p{\aa} deg masken og gj{\o}r deg klar. Trykk p{\aa} hodet mitt s{\aa} teller jeg mens du puster inn og ut. \\
+								\emph{You should take one puff of the blue medicine. Put on the mask and get ready. Push my head and I will count while you breathe in and out.}} & Button \\
+			\hline
+			3b2& \specialcell{13.5cm}{Den bl{\aa} medisinen skal du ta to ganger etter hverandre. Vi begynner med 1 puff. Sett p{\aa} deg masken og gj{\o}r deg klar. Trykk p{\aa} hodet mitt s{\aa} teller jeg mens du puster inn og ut. \\
+								\emph{The blue medicine you should take twice after each other. We start with 1 puff. Put on the mask and get ready. Push my head and I will count while you breathe in and out.}} & Button \\
+			\hline
+			1o & \specialcell{13.5cm}{Hent den oransje medisinen og masken du puster i, og trykk p{\aa} hodet mitt n{\aa}r du har hentet dem. \\
+								\emph{Fetch the orange medication and the mask you breathe into, and push my head when you have fetched them.}} & Button \\
+			\hline
+			2o & \specialcell{13.5cm}{Rist den oransje medisinen! (ristelyd) Trykk p{\aa} hodet n{\aa}r du er klar. \\
+								\emph{Shake the orange medicine! (shaking sound) Push my head when you are ready.}} & Button \\
+			\hline
+			3o1& \specialcell{13.5cm}{Av den oransje medisinen skal du ta 1 puff. Sett p{\aa} deg masken og gj{\o}r deg klar. Trykk p{\aa} hodet mitt s{\aa} teller jeg mens du puster inn og ut. \\
+								\emph{You should take one puff of the orange medicine. Put on the mask and get ready. Push my head and I will count while you breathe in and out.}} & Button \\
+			\hline
+			3o2& \specialcell{13.5cm}{Den oransje medisinen skal du ta to ganger etter hverandre. Vi begynner med 1 puff. Sett p{\aa} deg masken og gj{\o}r deg klar. Trykk p{\aa} hodet mitt s{\aa} teller jeg mens du puster inn og ut. \\
+								\emph{The orange medicine you should take twice after each other. We start with 1 puff. Put on the mask and get ready. Push my head and I will count while you breathe in and out.}} & Button \\
+			\hline
+			1p & \specialcell{13.5cm}{Hent den lilla medisinen og masken du puster i, og trykk p{\aa} hodet mitt n{\aa}r du har hentet dem. \\
+								\emph{Fetch the purple medication and the mask you breathe into, and push my head when you have fetched them.}} & Button \\
+			\hline
+			2p & \specialcell{13.5cm}{Rist den lilla medisinen! (ristelyd) Trykk p{\aa} hodet n{\aa}r du er klar. \\
+								\emph{Shake the purple medicine! (shaking sound) Push my head when you are ready.}} & Button \\
+			\hline
+			3p1& \specialcell{13.5cm}{Av den lilla medisinen skal du ta 1 puff. Sett p{\aa} deg masken og gj{\o}r deg klar. Trykk p{\aa} hodet mitt s{\aa} teller jeg mens du puster inn og ut. \\
+								\emph{You should take one puff of the purple medicine. Put on the mask and get ready. Push my head and I will count while you breathe in and out.}} & Button \\
+			\hline
+			3p2& \specialcell{13.5cm}{Den lilla medisinen skal du ta to ganger etter hverandre. Vi begynner med 1 puff. Sett p{\aa} deg masken og gj{\o}r deg klar. Trykk p{\aa} hodet mitt s{\aa} teller jeg mens du puster inn og ut. \\
+								\emph{The purple medicine you should take twice after each other. We start with 1 puff. Put on the mask and get ready. Push my head and I will count while you breathe in and out.}} & Button \\
+			\hline
+			9s & \specialcell{13.5cm}{N{\aa} kan du holde den lille gr{\o}nne kaninen rett under nesen min for {\aa} f{\aa} premien din! \\
+								\emph{Now you can hold up the small green rabbit right beneath my nose to get your prize!.}} & Green nanoz \\
+			\hline
+			\label{tab:karotzmanuscript}
+		\end{longtable}
+	\end{center}
+%\end{table}

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!--
+         <Spinner
+        android:id="@id/medicine_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/treatment_medicine_textView"
+        android:layout_centerHorizontal="true" />
+    -->
+
+    <TextView
+        android:id="@+id/treatment_date_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="18dp"
+        android:text="@string/date"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ListView
+        android:id="@+id/treatment_medication_listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignLeft="@+id/treatment_date_editText"
+        android:layout_alignTop="@+id/treatment_choose_medicine"
+        android:choiceMode="singleChoice" >
+
+    </ListView>
+
+    <EditText
+        android:id="@+id/treatment_date_editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/treatment_date_textView"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="22dp"
+        android:ems="10"
+        android:inputType="date" />
+
+    <TextView
+        android:id="@+id/treatment_choose_medicine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/treatment_date_textView"
+        android:layout_marginTop="28dp"
+        android:text="Velg medisin" />
+
+    <Button
+        android:id="@+id/register_treatment_button"
+        android:background="@layout/custom_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/treatment_medication_listView"
+        android:text="@string/submit" />
+
+</RelativeLayout>

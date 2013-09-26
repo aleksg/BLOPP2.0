@@ -1,0 +1,214 @@
+\chapter{Introduction}  
+\label{intro}
+This chapter contains a brief introduction to the
+development project and the layout of the report. It gives an overview of what
+the development project goal was, how it was reached, and the documentation of
+the development process. This introduction also explains the reason for the
+given project and how the projects successfulness is measured. 
+
+
+We describe the customer and partners in Section \ref{sec:custinf}. 
+
+In Section \ref{prosec}, we'll describe the project in a more detailed level.  
+% description of the project and the customer in Section x.x and x.x, a
+% description of the project background is given in Section x.x and contains the
+% reason for the project as well as the motivation behind such a project.  The
+% stakeholders are identified and listed in Section x.x in order to clarify what
+% parties are affecting and being affected by the project. A discussion of the
+% effects of the project is given in Section x.x and the duration of the project
+% is explained in Section x.x. Finally, there is a short outline of the rest of
+% the report in section x.x.
+
+\section{Customer Information}
+\label{sec:custinf}
+\subsection{Sponsor}
+The sponsor of this project is The Norwegian Asthma and Allergy Association (Referenced as NAAF).
+
+\subsection{Partners}
+Partners of the project is NAAF, ``Sykehusapotekene i Midt-Norge" and The
+Norwegian University of Technology and Science. Table \ref{tab:customercontacts} shows
+relevant contacts for the customer. 
+
+\subsection{Customer contacts}
+
+\begin{table}[h!]
+	\begin{center}
+		\begin{tabular}{|p{4cm}|p{7cm}|}   
+			\hline      
+			\bf{Name} & \bf{Email} \\ 
+			\hline
+			Ole Andreas Alsos & \href{mailto:oleanda@idi.ntnu.no}{oleanda@idi.ntnu.no}  \\     
+			\hline
+			Elin Høien & \href{mailto:elin@hoien.no}{elin@hoien.no}
+			\\
+			\hline
+			Marikken Høiseth &
+			\href{mailto:marikken.hoiseth@ntnu.no}{marikken.hoiseth@ntnu.no}\\
+			\hline
+			Hanne Linander &
+			\href{mailto:hanne.linander@gmail.com}{hanne.linander@gmail.com}
+			\\
+			\hline
+		 \end{tabular}
+	\end{center}
+	\caption{Customer contacts}
+	\label{tab:customercontacts}
+\end{table}
+%Vi bør ta enten tabell, eller project group her. Tabellen må da selvsagt utvides.
+\subsubsection{Project Group}
+\begin{itemize}
+  	\item Cand Pharm Elin Bergene, ``Sykehusapotekene i Midt-Norge" \\
+	\item Scholarship Ole Andreas Alsos, ``Norsk Senter for Pasientjournal (NSEP) and Institute for Computer Science (IDI), NTNU (Ph.D as of 2011)".
+	\item Scholarship Marikken Høiseth, Institute for Product Design (IPD), NTNU.
+	\item Bo Alexander Gleditsch, communication advisor NAAF.
+	\item Rose Lyngra, senior advisor NAAF.
+\end{itemize}
+
+\subsubsection{Affiliates}
+The project is in close collaboration with the following experts:
+\begin{itemize}
+  	\item ``Sykehusapotekene i Midt-Norge" (SHAP) will be a test arena for the result of the project. They will work further with the results.
+	\item ``Norsk Senter for Elektronisk Pasientjournal (NSEP)". NTNUs activities within health informatics is gathered at NSEP. The project will take advantage from 
+the academic community and the infrastructur at NSEP (offices and usability lab).
+	\item Institute for product design (IPD) at NTNU will consult upon design. 
+	\item Institute for computer and information science arranges the course and will provide an advisor for the group. 
+	\item Norges Astma og AllergiForbund (NAAF). The project has been provided by NAAF. NAAF will provide expertice about the user groups of the final applications. NAAF will work further with the results of the project. 
+\end{itemize}
+
+\section{Project Information}
+\label{prosec}
+\subsection{Name}
+The name of this project is ``BLOPP", and is set by the customer. BLOPP stands for ``Barns 
+legemiddelopplevelser" or ``Children's experience with medication".  
+
+
+\input{Introduction/Background}
+
+\subsection{The task}
+Our job is to implement two android applications, one application for the parents, GAPP, and one application for children, CAPP.
+GAPP covers the following high level functionality:
+\begin{enumerate}
+  \item The application must alert the parent(s) when it is time for a medication/treatment for their child.
+  \item The application must log the health status of their child, according to Appendix \ref{apx:trafficlight}.
+  \item The application should also log pollen casts for the area the child is in, and which medications are taken at each day.
+  \item The application must store medical plans for their child. These plans concern asthma medications.
+  \item The application must provide instructions on how to use different medications. These instructions may be pictures or text, provided by Naaf. 
+\end{enumerate}
+
+The CAPP covers the following high level functionality:
+\begin{enumerate}
+  \item The application should distract the children during a treatment.
+  \item The application should gamify their experience with medication. 
+\end{enumerate}
+
+In addition, an application for the Karotz platform should be created to assist and (to an extend be able to) substitute 
+the GAPP and CAPP mobile applications. The Karotz app covers the following high level functionality:
+\begin{enumerate}
+  \item The application should alert the child and parent(s) when it is time for a medication/treatment for the child.
+  \item The application should distract the children during a treatment.
+  \item The application should encourage children to take medication through interactivity and gamification. 
+\end{enumerate}
+
+The functional requirements for both applications are described in more details in Chapter 6, ``Software Architecture''.
+
+
+\subsection{Stakeholders}
+This section identifies and describes the stakeholders of this project. The
+different stakeholders are listed in Table \ref{tab:stakeholders}. This table also contains
+a short rationale for why each party has been listed, and what their main
+concerns for the applications are.
+
+
+\begin{table}[h]
+	\begin{tabular}{|p{4cm}|p{7cm}|}   
+		\hline      
+		
+		\bf{Stakeholder} & \bf{Rationale} \\ 
+		\hline
+		NAAF & Wants to figure out if this is a possible solution to make children take
+		their medicine. Have backed up this project with funding. 
+		\\
+		\hline
+		Sykehusapotekene i Norge & Cooperates with NAAF to find out if there is a better
+		way to make children take their medicine. 
+		\\
+		\hline
+		Developers & Wants the applications to be a success to get a good grade in the
+		course.
+		\\
+		\hline
+		NTNU & Wants the project to be a success to front the research that is done by
+		the university.
+		\\
+		\hline
+		Children diagnosed with asthma & Needs something to make it easier to go through
+		with each treatment.
+		\\
+		\hline
+		Parents with children diagnosed with asthma & Needs instruction in how to use
+		medicines correctly. Needs reminders about when to take their medicine. Needs an
+		organized way to see what treatment is done for the day. Wants their children to
+		suffer less during medication.
+		\\
+		\hline
+	\end{tabular}
+	\caption{Stakeholders}
+	\label{tab:stakeholders}
+\end{table}
+
+
+\subsection{Measurement of project effort}
+The customer is seeking a fully documented prototype of a system which can be used for future 
+development and applying for additional funding for the future of the project. The customer want
+the prototype tested on children suffering from deseases causing breathing problems and their parents, in order
+to determine whether or not such an system is an adequate solution to the problem. The system should be
+compatible with Android v3.1 and newer, and should be very intuitive to use. The resulting prototype should be very well documented
+to ensure that future developers will be able to continue development after the end of this project.
+
+  
+\subsection{General terms}
+We are to make two applications for android devices. Originally the customer wanted the applications made for iOS, 
+but since we did not have Apple-computers and the customer didn't have the funding to provide them, we 
+switched to android devices. We have at our disposal a github repository, an agilezen board and can request 
+an android tablet to be used for testing when we need this.
+
+
+\subsection{Planned effort}
+The course description states an expected effort of 25 hours per week per student. The course will last for 13 weeks,
+resulting in a total expected effort of 325 hours per student, at a total of 1625 for the team altogether. These hours will 
+be carefully placed among the different sprints. 
+
+
+\subsection{Schedule of results}
+The applications are scheduled to be completed within November 10th. The time we have left after this, will be used for fixing
+extremely critical errors, and finish this report.
+
+\subsection{Report Outline}
+
+\paragraph{Chapter 1: Introduction} contains a short description of the project, it's goals and purpose and what the report consists of.
+
+\paragraph{Chapter 2: Project Organization} contains a presentation of how the group is organized and what responsibilities lies on each group member.
+
+\paragraph{Chapter 3: Prestudy} contains a documentation of the pre-study done ahead of the implementation of the applications.
+
+\paragraph{Chapter 4: Risk Analysis} contains an analysis of what threats may endanger the project and what will be done to avoid them, and what will be done if they occur.
+
+\paragraph{Chapter 5: Development methodology} contains a documentation of the different methodologies and how the team will take them into use
+
+\paragraph{Chapter 6: Software Architecture} contains a collection of the requirements for the prototype, including use cases, architectural description and documentation of the database.
+
+\paragraph{Chapter 7: Work Plan} describes the different phases in the development, different activities and milestones and a Gantt Diagram for the project.
+
+\paragraph{Chapter 8: Document Templates} contains phase documents and templates for meeting agendas and status reports.
+
+\paragraph{Chapter 9: Coding Templates} contains a description of how the team should write code in order to make a common understanding.
+
+\paragraph{Chapter 10: Quality Assurance} describes how the team will assure the quality of all delivered source code and documents. 
+
+\paragraph{Chapter 11: Overall Test Plan} describes how the team will do testing throughout the project.
+
+\paragraph{Chapter 12: Sprints} contains the backlogs, goals, testing and result and evaluation for each sprint. 
+
+\paragraph{Chapter 13: Further Work} contains a description of what has been implemented and what the next logical steps are based on the current state of the system.
+
+\paragraph{Chapter 14: Project evaluation} contains the evaluation and description of how the project was executed.

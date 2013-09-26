@@ -1,0 +1,61 @@
+\section{Functional Requirements completed}
+\label{sec:frcompleted}
+Table \ref{tab:functionalrequirementscompleted} shows an overview of the functional requirements stated in Section \ref{sec:functionalRequirements}, and whether they are completed or not.
+As one may notice, all functionality with high priority is completed. The parts that are not completed can be classified as ``nice to have''-features, but are not vital 
+for the prototype.
+\begin{table}
+\centering
+\begin{sideways}
+\begin{tabular}{|p{5.0cm} | l | l | p{9.5cm} |}
+\hline
+Functional Requirement & Priority & Completed & Comments \\
+\hline
+PFR 1 - Medication plan & High & Completed & Supports simple medication plans. Does not support several medicines that is to be taken at the same time. One minute delay is a potential workaround. \\
+\hline
+PFR 2 - Notifications & High & Completed & An alarm is goes off once it is time to take medicine. The email-notification was not implemented. \\
+\hline
+PFR 2.1 - Settings for notifications & Medium & Not completed & Due to short time, and because we needed access to file system to find ringtones. \\
+\hline
+PFR 2.2 - Notification to change conditions & Medium &  Not completed & Did not have time, although there is not a whole lot of work to extend the application with this functionality. \\
+\hline 
+PFR 3 - Families & Low & Not completed & - \\
+\hline
+PFR 4 - Guidelines & High & Completed & - \\
+\hline
+PFR 4.1 - Guidelines from NAAF & Medium & Not completed & - \\
+\hline  
+PFR 5 - Keep records of condition & High  & Completed & - \\
+\hline
+PFR 6 - Pollen forecast & Medium & Somewhat completed & NAAF's pollen cast is not running at the moment. We replicated the XML-structure for the purpose of the prototype.\\
+\hline  
+PFR 7 - Screen sizes & Low  & Not completed & Only supports screen sizes at 480x800 at the time being. Easily extended, but needs scaling of pictures to fit the screen. \\
+\hline
+\hline
+CFR 1 - Distraction & High & Completed & - \\
+\hline
+CFR 2 - Rewards & High & Completed & - \\
+\hline
+CFR 2.1 - Rewards & Low & Somewhat completed & - \\
+\hline
+CFR 3 - Screen sizes & Low & Not completed & Refer PFR 7. \\
+\hline 
+CFR 4 - Avatar & Low & Not completed & The customer had a hard time settling on our gamification concept. In the end there was not enough time. In cooperation with the customer, we decided to scrap the idea. \\
+\hline 
+CFR 5 - Child friendly instructions & High & Completed & Image gallery that shows very simple drawings of how to take a medicine. \\
+\hline
+\hline
+KFR 1 - Notification & High & Completed & - \\
+\hline
+KFR 2 - Distraction & High & Completed & Children needs to interact with the karotz when taking a medicine. This helps the user get distracted. \\
+\hline 
+KFR 3 - Reward & High &  Completed & - \\
+\hline
+KFR 4 - Register use of medicine & Medium & Completed & - \\
+\hline 
+KFR 5 - Logging & Medium & Completed & - \\
+\hline
+\end{tabular}
+\end{sideways}
+\label{tab:functionalrequirementscompleted}
+\caption[Functional requirements completion]{The original functional requirements, whether they are successfully implemented or not, and comments}
+\end{table}

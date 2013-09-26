@@ -1,0 +1,171 @@
+\chapter{Overall Test Plan}
+\label{chap:testPlan}
+The following chapter concerns the overall testplan for the project, and it contains general
+information about testing and what tests we aimed to perform. The template for our 
+tests can be found in table \ref{tab:testtable}, while the tests that were performed can be found
+in table \ref{tab:listoftests}.
+\\
+%\section{Introduction} Almost the same as the section above, so I merge them
+We test the system to 
+make sure that our applications are easy to use, and works the way they're intended,
+ensuring that the delivered product fulfills the requirement specifications. We 
+will document the most important tests with a description of the test we performed, what we 
+discovered during the test, and what we did to fix eventual problems that surfaced 
+during the test.
+%Needs references
+%rly?
+
+\section{Test methods}
+There are different test methods that can be used. The outer points are black-box and 
+white-box testing, but we can also do gray-box testing, a combination of the two.
+
+\subsection{Black-box testing}
+This method tests the functionality of the system. Black-box testing means we feed 
+something in and then see if the result we get out is the same as the one we were 
+expecting. This means that knowledge about the code and structure of the system 
+we are testing is unknown and irrelevant to the test. The tests will then be based on 
+external software descriptions like the functional requirements for the system.
+
+\subsection{White-box testing}
+This method of testing concerns itself with testing the internal structures of a 
+system. This means knowledge about structure and code is required to run the test, 
+and we require knowledge about the programming to design the test cases. Normally 
+this type of testing is performed at unit level, but can also be used on the system 
+as a whole. The problems detected by white box testing is technical, and it can not 
+detect whether or not a program is fulfilling it's functional requirements.
+
+\section{Test levels}
+There are different types and levels of testing. Usability testing focuses on the 
+general, graphical and functional part of the system, how easy the applications is 
+to use for the typical end users. There are low level tests testing the smaller parts 
+of the system, typically classes or methods, and there are high level tests, that 
+tests the system, or parts of the system.
+
+\subsection{Unit testing}
+The lowest form of testing is unit testing. This is intended to test the smallest 
+units of the system, namely the methods, classes and variables, making sure that each 
+of these parts works as expected. 
+
+\subsection{Module testing}
+Once the smaller parts of the system has been tested, we also test the coordination 
+between these parts, by testing that the entire module works as we intended.
+
+\subsection{Integration and System testing}
+When all of the individually tested modules works as intended, we test 
+that the different parts of the system works together, taking 
+small to medium parts of the system into the test, while the system tests will test the 
+system as a whole. That means that these tests test communication between
+the different modules and interfaces.
+
+\section{Testing approach}	
+We decided to use both black box and white box testing for our system. We did 
+two bigger usability tests, where we applied black box testing on both. We would have preferred to
+do some more usability testing, however, since we had to implement the system from scratch, we decided
+to start with one paper prototype usability test to get initial thoughts from the potential users. Then 
+we moved on with implementing the system before we again did a bigger usability test, this 
+time  with children. We used the implemented applications and the distraction sequence with the Karotz.
+This meant we had to do alot of unit and integration testing on the system during the implementation. 
+
+All of our tests will follow the template presented in table \ref{tab:testtable}.
+\begin{table}
+	\begin{center}
+		\begin{tabular}{|p{4.0cm}|p{8.0cm}|}
+			\hline
+			\bf{Item} & \bf{Description}\\
+			\hline
+			\bf{ID} & Identifier for the test\\
+			\bf{Description} & Description of the test\\
+			\bf{Date} & Date of the test\\
+			\bf{Responsible} & The person responsible for the test\\
+			\bf{Subject} & The subject being tested (typically a unit or part of the system)\\
+			\bf{Precondition} & The conditions we assume to be in place when the test is started\\
+			\bf{Steps} & The steps to perform\\
+			\hline
+			\bf{Results} & Results after the test was performed\\
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{Test template}
+	\label{tab:testtable}
+\end{table}
+
+The tests done during this project is listed in table \ref{tab:listoftests}, with the testID, brief description of the test
+and during what part of the project it was done.
+\begin{table}
+	\begin{center}
+		\begin{tabular}{|p{3.3cm}|p{10.0cm}|p{4.0cm}|}
+			%\endfirsthead
+			%\endhead
+			%\endfoot
+			%\caption{List of tests}
+			%\endlastfoot
+			\hline
+				\bf{ID} & \bf{Description}& \bf{Time of test}\\
+			\hline
+				USABILITY0.1 &	 Paper prototype test &  						04.09.12 (section \ref{sec:paperprototypetest})\\
+				\hline
+				USABILITY02 & 	Usability testing of the system on children & 			30.10.12 (table \ref{tab:usability5.1})\\
+				\hline
+				UNIT1.1 &		Test of GUI for GAPP & 												17.09.12 (table \ref{tab:unit1.1})\\
+				\hline
+				UNIT1.2 & 		Test of GUI for CAPP & 												17.09.12 (table \ref{tab:unit1.2})\\
+				\hline
+				UNIT2.1 & 		Test of the CAPP distraction sequence & 									30.09.12 (table \ref{tab:unit2.1})\\
+				\hline
+				UNIT2.2 & 		Test of the database connection & 										26.09.12 (table \ref{tab:unit2.2})\\
+				\hline
+				UNIT2.3 & 		Testing of SQL-queries &		 										30.09.12 (table \ref{tab:unit2.3})\\
+				\hline
+				UNIT3.1 & 		Test that alarm is given independently of phone state & 							14.10.12 (table \ref{tab:unit3.1})\\
+				\hline
+				UNIT3.2 & 		Test that the correct days is colored in the log &								09.10.12 (table \ref{tab:unit3.2})\\
+				\hline
+				UNIT3.3 & 		Test that the karotz notification is given at the correct time & 						09.10.12 (table \ref{tab:unit3.3})\\
+				\hline
+				UNIT3.4 & 		Test that the karotz distraction runs after recieving the notification and starting the sequence & 	09.10.12 (table \ref{tab:unit3.4})\\
+				\hline
+				UNIT3.5 & 		Test that the notifications with multiple doses makes the correct amount of medications & 		11.10.12 (table \ref{tab:unit3.5})\\
+				\hline
+				UNIT4.1 & 		Test that the right instructions are downloaded and shown on the instructions menu screen & 	18.10.12 (table \ref{tab:unit4.1})\\
+				\hline
+				UNIT5.1 & 		Test of the web access module \code{add\_child.php} & 							30.10.12 (table \ref{tab:unit5.1})\\
+				\hline
+				UNIT5.2 & 		Test of the web access module \code{add\_plan\_dose.php} & 						01.11.12 (table \ref{tab:unit5.2})\\
+				\hline
+				UNIT5.3 & 		Test of the web access module \code{dose\_is\_taken.php}. & 						01.11.12 (table \ref{tab:unit5.3})\\
+				\hline
+				UNIT5.4 & 		Test of the web access module \code{get\_available\_child\_states.php}. & 				01.11.12 (table \ref{tab:unit5.4})\\
+				\hline
+				UNIT5.5 & 		Test of the web access module \code{get\_child.php}. & 							01.11.12 (table \ref{tab:unit5.5})\\
+				\hline
+				UNIT5.6 & 		Test of the web access module \code{get\_child\_state.php}. & 						01.11.12 (table \ref{tab:unit5.6})\\
+				\hline
+				UNIT5.7 & 		Test of the web access module \code{get\_doses\_for\_current\_state.php}. & 			01.11.12 (table \ref{tab:unit5.7})\\
+				\hline
+				UNIT5.8 & 		Test of the web access module \code{get\_instructions.php}. & 						01.11.12 (table \ref{tab:unit5.8})\\
+				\hline
+				UNIT5.9 & 		Test of the web access module \code{get\_log\_days\_for\_child.php}. & 				03.11.12 (table \ref{tab:unit5.9})\\
+				\hline
+				UNIT5.10 & 		Test of the web access module \code{get\_log\_for\_child.php}. & 					03.11.12 (table \ref{tab:unit5.10})\\
+				\hline
+				UNIT5.11 & 		Test of the web access module \code{get\_plan.php}. & 							04.11.12 (table \ref{tab:unit5.11})\\
+				\hline
+				UNIT5.12 & 		Test of the web access module \code{register\_medicine\_taken.php}. & 				04.11.12 (table \ref{tab:unit5.12})\\
+				\hline
+				UNIT5.13 & 		Test of the web access module \code{remove\_plan\_dose.php}. & 					04.11.12 (table \ref{tab:unit5.13})\\
+				\hline
+				UNIT5.14 & 		Test of the web access module \code{remove\_plan\_medicine\_at\_time.php}. & 			04.11.12 (table \ref{tab:unit5.14})\\
+				\hline
+				UNIT5.15 & 		Test of the web access module \code{set\_child\_state.php}. & 						05.11.12 (table \ref{tab:unit5.15})\\
+				\hline
+				INTEGRATION5.1 & Test of CAPPs alarm and distraction sequences. & 							06.11.12 (table \ref{tab:integration5.1})\\
+				\hline
+				INTEGRATION5.2 & Testing that the log updates correctly based on registered medication and pollen feed. & 	06.11.12 (table \ref{tab:integration5.2})\\
+				\hline
+				INTEGRATION5.3 & Testing that the medicationplans is correctly registered to their respective healthstates. & 	05.11.12 (table \ref{tab:integration5.3})\\
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{List of tests}
+	\label{tab:listoftests}
+\end{table}

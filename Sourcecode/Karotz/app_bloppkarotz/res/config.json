@@ -1,0 +1,178 @@
+{
+    "apikey": "9d912b88-8b1e-422c-8afb-2d7cce08717a",
+    "database": {
+        "url": "mysql.stud.ntnu.no",
+        "user": "yngvesva_blopp",
+        "name": "yngvesva_blopp",
+        "pwd": "Naaf2012",
+        "accessUrls": {
+            "getDoses": "http://folk.ntnu.no/yngvesva/blopp/get_doses_for_current_state.php?child_id={0}",
+            "registerMedicineTaken": "http://folk.ntnu.no/yngvesva/blopp/register_medicine_taken.php",
+            "doseIsTaken": "http://folk.ntnu.no/yngvesva/blopp/dose_is_taken.php?dose_id={0}"
+        }
+    },
+    "soundFiles": {
+        "getReadyForMedication": "http://folk.ntnu.no/yngvesva/blopp/res/get_ready_for_medication.mp3",
+        "goodJobYouEarned": "http://folk.ntnu.no/yngvesva/blopp/res/good_job_you_earned.mp3",
+        "hello": "http://folk.ntnu.no/yngvesva/blopp/res/hellp.mp3",
+        "medicationDone": "http://folk.ntnu.no/yngvesva/blopp/res/medication_done.mp3",
+        "medicineIsIndicatedByLightOnBelly": "http://folk.ntnu.no/yngvesva/blopp/res/medicine_is_indicated_by_light_on_belly.mp3",
+        "pressMyButtonWhenReady": "http://folk.ntnu.no/yngvesva/blopp/res/press_my_button_when_ready.mp3",
+        "stars": "http://folk.ntnu.no/yngvesva/blopp/res/stars.mp3",
+        "10": "http://folk.ntnu.no/yngvesva/blopp/res/ten.mp3",
+        "9": "http://folk.ntnu.no/yngvesva/blopp/res/nine.mp3",
+        "8": "http://folk.ntnu.no/yngvesva/blopp/res/eight.mp3",
+        "7": "http://folk.ntnu.no/yngvesva/blopp/res/seven.mp3",
+        "6": "http://folk.ntnu.no/yngvesva/blopp/res/six.mp3",
+        "5": "http://folk.ntnu.no/yngvesva/blopp/res/five.mp3",
+        "4": "http://folk.ntnu.no/yngvesva/blopp/res/four.mp3",
+        "3": "http://folk.ntnu.no/yngvesva/blopp/res/three.mp3",
+        "2": "http://folk.ntnu.no/yngvesva/blopp/res/two.mp3",
+        "1": "http://folk.ntnu.no/yngvesva/blopp/res/one.mp3",
+        "0": "http://folk.ntnu.no/yngvesva/blopp/res/zero.mp3",
+        "countdown": "http://folk.ntnu.no/yngvesva/blopp/res/countdown.mp3"
+        
+    },
+    "updater": {
+        "timeout": 30
+    },
+    "karotzColors": {
+        "BLUE": "0000FF",
+        "ORANGE": "75FF00",
+        "PURPLE": "9F00FF"
+    },
+    "manuscripts": {
+        "b": ["1s","2s","1b","2b","3b1","4s","6s","7s1"],
+        "o": ["1s","2s","1o","2o","3o1","4s","6s","7s1"],
+        "p": ["1s","2s","1p","2p","3p1","4s","6s","7s1"],
+        "bb": ["1s","2s","1b","2b","3b2","4s","5s","4s","6s","7s2"],
+        "oo": ["1s","2s","1o","2o","3o2","4s","5s","4s","6s","7s2"],
+        "pp": ["1s","2s","1p","2p","3p2","4s","5s","4s","6s","7s2"],
+        "bo": ["1s","2s","3s","1b","2b","3b1","4s","8s","1o","2o","3o1","4s","6s", "7s2"]
+    },
+    "actions": {
+        "1s": {
+            "sound": "http://folk.ntnu.no/yngvesva/blopp/res/1s_notification.mp3",
+            "activator": {"type": "button"},
+            "action": "notification"
+        },
+        "2s": {
+            "sound": "http://folk.ntnu.no/yngvesva/blopp/res/2s_fetch_adult_instructions.mp3",
+            "activator": {"type": "nanoz", "color": "YELLOW"},
+            "light": "75FF00"
+        },
+        "3s": {
+            "sound": "http://folk.ntnu.no/yngvesva/blopp/res/3s_two_different_medicines_instructions.mp3",
+            "activator": {"type": "wait", "duraction": 3000}
+        },
+        "4s": {
+            "sound": "http://folk.ntnu.no/yngvesva/blopp/res/4s_countup_ten.mp3",
+            "activator": {"type": "wait", "duration": 2000}
+        },
+        "5s": {
+            "sound": "http://folk.ntnu.no/yngvesva/blopp/res/5s_first_done_instructions.mp3",
+            "activator": {"type": "button"}
+        },
+        "6s": {
+            "sound": "http://folk.ntnu.no/yngvesva/blopp/res/6s_postmed_compliment.mp3",
+            "activator": {"type": "wait", "duration": 2000}
+        },
+        "7s1": {
+            "sound": "http://folk.ntnu.no/yngvesva/blopp/res/7s1_reward_one.mp3",
+            "activator": {"type": "wait", "duration": 2000}
+        },
+        "7s2": {
+            "sound": "http://folk.ntnu.no/yngvesva/blopp/res/7s2_reward_two.mp3",
+            "activator": {"type": "wait", "duration": 2000}
+        },
+        "7s3": {
+            "sound": "http://folk.ntnu.no/yngvesva/blopp/res/7s3_reward_three.mp3",
+            "activator": {"type": "wait", "duration": 2000}
+        },
+        "7s4": {
+            "sound": "http://folk.ntnu.no/yngvesva/blopp/res/7s4_reward_four.mp3",
+            "activator": {"type": "wait", "duration": 2000}
+        },
+        "7s5": {
+            "sound": "http://folk.ntnu.no/yngvesva/blopp/res/7s5_reward_five.mp3",
+            "activator": {"type": "wait", "duration": 2000}
+        },
+        "7s7": {
+            "sound": "http://folk.ntnu.no/yngvesva/blopp/res/7s7_reward_seven.mp3",
+            "activator": {"type": "wait", "duration": 2000}
+        },
+        "7s10": {
+            "sound": "http://folk.ntnu.no/yngvesva/blopp/res/7s10_reward_ten.mp3",
+            "activator": {"type": "wait", "duration": 2000}
+        },
+        "8s": {
+            "sound": "http://folk.ntnu.no/yngvesva/blopp/res/8s_get_second_instructions.mp3",
+            "activator": {"type": "wait", "duration": 2000}
+        },
+        "1b": {
+            "sound": "http://folk.ntnu.no/yngvesva/blopp/res/1b_blue_instructions_one.mp3",
+            "activator": {"type": "button"},
+            "light": "0000FF"
+        },
+        "2b": {
+            "sound": "http://folk.ntnu.no/yngvesva/blopp/res/2b_blue_instructions_two.mp3",
+            "activator": {"type": "button"},
+            "light": "0000FF"
+        },
+        "3b1": {
+            "sound": "http://folk.ntnu.no/yngvesva/blopp/res/3b1_blue_instructions_three.mp3",
+            "activator": {"type": "button"},
+            "light": "0000FF"
+        },
+        "3b2": {
+            "sound": "http://folk.ntnu.no/yngvesva/blopp/res/3b2_blue_instructions_three_twice.mp3",
+            "activator": {"type": "button"},
+            "light": "0000FF"
+        },
+        "1o": {
+            "sound": "http://folk.ntnu.no/yngvesva/blopp/res/1o_orange_instructions_one.mp3",
+            "activator": {"type": "button"},
+            "light": "FFA500"
+        },
+        "2o": {
+            "sound": "http://folk.ntnu.no/yngvesva/blopp/res/2o_orange_instructions_two.mp3",
+            "activator": {"type": "button"},
+            "light": "FFA500"
+        },
+        "3o1": {
+            "sound": "http://folk.ntnu.no/yngvesva/blopp/res/3o1_orange_instructions_three.mp3",
+            "activator": {"type": "button"},
+            "light": "FFA500"
+        },
+        "3o2": {
+            "sound": "http://folk.ntnu.no/yngvesva/blopp/res/3o2_orange_instructions_three_twice.mp3",
+            "activator": {"type": "button"},
+            "light": "FFA500"
+        },
+        "1p": {
+            "sound": "http://folk.ntnu.no/yngvesva/blopp/res/1p_purple_instructions_one.mp3",
+            "activator": {"type": "button"},
+            "light": "9F00FF"
+        },
+        "2p": {
+            "sound": "http://folk.ntnu.no/yngvesva/blopp/res/2p_purple_instructions_two.mp3",
+            "activator": {"type": "button"},
+            "light": "9F00FF"
+        },
+        "3p1": {
+            "sound": "http://folk.ntnu.no/yngvesva/blopp/res/3p1_purple_instructions_three.mp3",
+            "activator": {"type": "button"},
+            "light": "9F00FF"
+        },
+        "3p2": {
+            "sound": "http://folk.ntnu.no/yngvesva/blopp/res/3p2_purple_instructions_three_twice.mp3",
+            "activator": {"type": "button"},
+            "light": "9F00FF"
+        },
+        "9s": {
+            "sound": "http://folk.ntnu.no/yngvesva/blopp/res/9s_postmed_nanoz_instructions.mp3",
+            "activator": {"type": "nanoz", "color": "GREEN"},
+            "light": "00FF00"
+        }
+    }
+}

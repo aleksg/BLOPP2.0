@@ -1,0 +1,124 @@
+\section{Project Information}
+\label{sec:prosec}
+\subsection{Project Name}
+The name of this project is ``BLOPP", and was decided by the customer. BLOPP stands for ``Barns 
+LegemiddelOPPlevelse'' (``Children's experience with medication'').  
+
+\input{Introduction/Background}
+
+\subsection{The task}
+Our task was to implement two Android applications, one application for the parents, Guardian Application (GAPP), 
+and one application for children, Children Application (CAPP). In addition, an application for the Karotz platform 
+should be created to assist and to an extent substitute the GAPP and CAPP mobile applications. 
+
+The high level functional requirements for these applications are to be found in Table 
+\ref{tab:highfuncitionalrequirements}. The functional requirements for all applications are described in more detail 
+in Section \ref{sec:functionalRequirements}
+
+\begin{table}
+\centering
+	\begin{tabular}{p{1.5cm}|p{12cm}}
+		\hline
+		\bf{\#} & \bf{Description} \\  \hline \\
+
+		GHR1 & The application must alert the parent(s) when it is time for a medication/treatment for their child. \\ \\
+		GHR2 & The application must log the health status of their child, according to section \ref{sec:trafficlight}. \\ \\ 
+		GHR3 & The application should log pollen casts for the area the child is in, and which medications were taken each day.\\ \\ 
+		GHR4 & The application must store medical plans for their child. These plans concern asthma medications, and contains which medicines should be taken at which times.\\ \\ 
+		GHR5 & The application must provide instructions on how to use different medications. These instructions may be pictures or text, provided by NAAF. \\ \\ \hline \\
+
+		CHR1 & The application should distract the children during a treatment. \\ \\ 
+		CHR2 & The application should gamify their experience with medication.  \\ \\ \hline \\
+
+		KHR1 & The application should alert children and parent(s) when it is time for a medication/treatment for the children.  \\ \\ 
+		KHR2 & The application should distract the children during a treatment. \\ \\ 
+		KHR3 & The application should encourage children to take medication through interactivity and gamification.  \\
+		\hline
+	\end{tabular}
+	\caption[High level functional requirements]{High level functional requirements. GHR: GAPP requirement, CHR: CAPP requirement, KHR: karotz application requirement}
+	\label{tab:highfuncitionalrequirements}
+\end{table}
+\clearpage{}
+
+\subsection{Measurement of project effort}
+The customer was seeking a documented prototype of a system which could be used for future 
+development and for getting additional funding for further development of the project. The customer wanted
+the prototype tested on children suffering from diseases causing breathing problems and their parents, in order
+to determine whether or not such a system was an adequate solution to the problem. The system should be
+compatible with Android v4.0 or newer versions, and should be intuitive to use. The resulting prototype should be well documented
+to ensure that further development would be able to continue development after the end of the project.
+
+\subsection{General terms}
+We were to make two applications for Android devices and one for Karotz. Originally the customer wanted the smart phone applications made for iOS, 
+but since we did not have Apple computers and iPhones, and the customer did not have the funding to provide them, we 
+switched to the Android platform. We had at our disposal a Karotz robot with a yellow and a green Nanoz controller,
+a Github repository, an AgileZen board and could request an Android tablet to be used for testing if necessary.
+
+\subsection{Planned effort}
+The course description states an expected effort of 25 hours per week per student. The course lasted for 13 weeks,
+resulting in a total expected effort of 325 hours per student, at a total of 1625 for the team altogether.
+
+\subsection{Schedule of results}
+The applications were scheduled to be completed within November 10th. The time we had left after this, was used for fixing
+critical errors, and completing the report.
+
+\subsection{Report Outline}
+The report is outlined in Table \ref{tab:chapters}. 
+
+\begin{table}
+	\begin{center}
+	\begin{tabular}{|p{0.3\linewidth}|p{0.6\linewidth}|}   
+		\hline   
+		\bf{Chapter} & \bf{Description} \\ 
+		\hline
+			Chapter \ref{chap:intro}: \nameref{chap:intro} &
+			 Contains a short description of the project, its goals and purpose and what the 
+			 report consists of. \\
+		\hline
+			Chapter \ref{chap:projectManagement}: \nameref{chap:projectManagement} & 
+			Contains a description of how the group is organized and what responsibilities 
+			lies on each of the group members. A risk analysis for the project is also included
+			 in this chapter, as well as the work plan which describes the different phases, 
+			 activities and a Gantt Diagram for the project. Quality Assurance
+			 techniques are also discussed, which include meetings, coding templates and document templates. \\
+		\hline
+			Chapter \ref{chap:prestudy}: \nameref{chap:prestudy} & 
+			Contains a documentation of the preliminary studies done ahead of the implementation of the 
+			applications, including a report of the design workshop done early in development,
+			development methodology, frameworks and tools used in the project, the Karotz platform 
+			and information about asthma. \\
+		\hline
+			Chapter \ref{chap:developmentMethodology}: \nameref{chap:developmentMethodology} &
+			Contains description and discussion about the various development methods considered
+			for the project, and an analysis of SCRUM, the chosen methodology. \\
+		\hline
+			Chapter \ref{chap:requrementSpecifications}: \nameref{chap:requrementSpecifications} &
+			Contains an overview of the requirement specifications for the system, through use cases
+			and functional requirements. \\
+		\hline
+			Chapter \ref{chap:systemDesign}: \nameref{chap:systemDesign} & 
+			Contains a collection of requirements and design choices for the prototype, 
+			including use cases, architectural description and documentation of the database. \\
+		\hline
+			Chapter \ref{chap:testPlan}: \nameref{chap:testPlan} & 
+			Describes how the team will do testing throughout the project. \\
+		\hline
+			Chapter \ref{chap:sprint1}-\ref{chap:sprint5}: \nameref{chap:sprint1}-\nameref{chap:sprint5} & 
+			Contains the goals, backlogs, test tables, results and reviews for the respective sprints. \\
+		\hline
+			Chapter \ref{sec:Usabilitytesting}: \nameref{sec:Usabilitytesting} &
+			Contains a description of usability testing in general, and reports and discussion from the 
+			usability tests done in the project.\\
+		\hline
+			Chapter \ref{chap:furtherWork}: \nameref{chap:furtherWork} & 
+			Contains a description of what has been implemented and what the next logical steps 
+			are based on the current state of the system. \\
+		\hline
+			Chapter \ref{chap:evaluation}: \nameref{chap:evaluation} & 
+			Contains the evaluation and description of how the project was executed. \\
+		\hline
+	\end{tabular}
+	\end{center}
+	\caption{Chapters and their respective description}
+	\label{tab:chapters}
+\end{table}

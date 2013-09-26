@@ -1,0 +1,63 @@
+\documentclass[]{article}
+\usepackage[landscape]{geometry}
+
+\begin{document}
+
+The consequences and probability are rated by:
+
+L -- Low risk / Low consequences
+
+M -- Medium risk / Medium consequences
+
+H -- High risk / High consequences \\
+
+\begin{tabular}{  c 	 	l 	 	p{4.0cm} 	 	p{4.0cm} 	  	c 	 	p{4.0cm} 	 	l }
+\hline
+  \# & Activity 	& Risk factor 	& Conseqences 	& Prob.& Strategy and action 							& Responsible \\
+\hline
+  IR1 & All		& Illness among the developer team.  	& M -- Deacrease of productivity. Lack of expertise.	& M 	& Share information online. The sick developer keeps updated. 	& All \\
+\hline
+  IR2 & All		& Long-term leave. A group member takes a long-term leave.  & M -- Reduced capacity.  & L	&  Plan what the member shall do before he is leavng.		& The Member \\
+\hline
+  IR3 & All		& Internal conflicts among the developer team.		& M -- Bad mood. Less work effort.  & H	&  Bring it up, and handle it right away. Use the advisor. 		& All \\
+\hline
+  IR4 & All		& Deadlines not being reached.			 	& H -- Unfinished work.  & M	&  Predict work load and set project boundaries. 	& Project leader \\
+\hline
+  IR5 & All		& Group members busy with other courses.		 & L -- Reduced capacity & H	&  Common Google Calendar to plan meetings. The member finds another time to do the work. 	& All \\
+\hline
+  IR6 & All		& Group members leaves project.		 	& H -- Reduced capacity & L	&  Reduce the project boundaries.	& All \\
+\hline
+  IR7 & Meetings		& Group members showing up late.	 	& L -- Reduced capacity & H	&  The group member works more next time. Penalties. 	& All \\
+\hline
+  IR8 & Implementation		& Lack of knowledge or abilities.	 	& L -- More time goes to getting knowledge. & M & Getting the knowledge. 	& All \\
+\end{tabular}
+
+\newpage{}
+
+\begin{tabular}{  c 	 	p{1.8cm} 	 	p{4.0cm} 	 	p{4.0cm} 	  	c 	 	p{4.0cm} 	 	p{1.8cm} }
+\hline
+  \# & Activity 	& Risk factor 	& Conseqences 	& Prob.& Strategy and action 							& Responsible \\
+\hline
+  ER1 & All		& External conflicts. One or more of the group members is in conflict with the customer or the group advisor & M -- May lead to bad communication, lack of feedback etc. & L 	& Bring it up and handle it right away. If customer contact is in a really bad conflict, switch customer contact.	& Customer contact \\
+\hline
+  ER2 & Design and implementation	& Customer changes requirements. The customer is very decisive and demanding. & H -- May stress the developers and and make them confused on what to prioritize.  & H	&  Force the customer to prioritize tasks. Compromise possible solutions. 	& Development team and customer \\
+\hline
+  ER3 & All		& There is insufficient input from the customer regarding the development process.  & M -- May lead to expectencies not being met.  & L &  Force input from customer.	& Development team and customer \\
+\hline
+  ER4 & Development	& Tools fail. Software tools stop working or are outdated. 	& M -- Development process halted.  & L	&  Do other work. For instance report writing, testing and refactoring. Find other solutions to the problem. & All \\
+\hline
+  ER5 & Development & Loss of data. Data connected to the project is lost, or is unavailable for a period of time.   & H -- Development put back in time. & L &  Prioritize tasks according to remaining time. 	& All \\
+\hline
+  ER6 & Meetings, Feedback	& One of the customers takes a long-term leave. & L -- May delay feedback, input and access to resources. & L & Require more from the other customer contacts. 	& The customer \\
+\hline
+  ER7 & Development & Karotz API not working at all. & M -- May lead to removal of this feature for the prototype. & L	&  Focus on other parts of the application.  & Development team. \\
+\hline
+  ER8 & Development		& Database not working at all.  & H -- May lead to hardcoding of all features for the prototype. & L & Hardcode necessary parts.	& Development team \\
+\hline
+  ER9 & Development		& Android devices stop working  & L -- May delay development since emulator has low performance. & L & The group member must switch to emulator. 	& Group member \\
+\end{tabular}
+
+
+
+\end{document}
+

@@ -1,0 +1,43 @@
+\subsection{Database Access Layer}
+\label{sec:databaseAccessLayer}
+The database access layer consists of 14 PHP files hosted at			%TODO: update this number ? 
+\url{http://folk.ntnu.no/yngvesva/blopp/}:
+\begin{description}
+    \item[add\_child.php] Takes a name, personal number (SSN) and a list of states (integer IDs) that the child can have. 
+    	Creates an entry in the \code{CHILDREN} table for the child, and a medical plan entry. Also creates an entry 
+    	in \code{CHILD\_HEALTH\_STATES} for all the states the child can have. Returns the generated \code{medical\_plan\_id}.
+    \item[add\_plan\_dose.php] Inserts a new entry in the \code{MEDICAL\_PLAN\_DOSES} table for the given child, with the parameters 'health state', 'dose of the given medicine' and a timestamp. This is the primary module used to alter medical plans. Returns the ID of the
+  		added dose.
+    \item[dose\_is\_taken.php] Check if a dose of a planned medicine has been taken that day. Takes an \code{id} of an entry in
+    	the table \code{MEDICAL\_PLAN\_DOSES} as input.
+    \item[get\_available\_child\_states.php] Takes a \code{child\_id} and returns a list of the labels (colors, names) and IDs of the 
+    	states the child can have.
+    \item[get\_child.php] Takes an ID of a child and returns all the columns for the given ID in the \code{CHILDREN} table.
+    \item[get\_child\_state.php] Accepts a child ID and returns the ID and label of the current state of the child.
+    \item[get\_doses\_for\_current\_state.php] Takes a child ID and returns a list of planned doses of medicines that are not 
+    	taken that day. The fields of each entry are: \code{id}, \code{medical\_plan\_id}, \code{health\_state\_id}, \code{time}, 
+    	\code{medicine\_id}, \code{medicine\_karotz\_color} and \code{medicine\_name}.
+    \item[get\_instructions.php] Get instructions (image, effect description and usage description) for a given medicine by ID.
+    \item[get\_log\_days\_for\_child.php] For the calendar in GAPP, it was advantageous to have a database access method that
+  		could return a list of days in a month with the child health state for each day, and a list of doses taken on that day. 
+  		\code{get\_log\_days\_for\_child.php} accomplishes this by using the table \code{CHILDREN\_LOG\_DAYS} to find the latest recorded
+  		health state before the given month started. Then it iterates through all the days, checking if there are any days in the month
+  		where the status changes, and adding all doses, taken from \code{DAY\_MEDICINE\_DOSES}, on that day. The method takes a \code{child id},
+  		and two optional parameters \code{month} and \code{year}. If the month and year are not set, the values for the current days
+  		are used.
+    \item[get\_log\_for\_child.php] Returns all registered entries in the table \code{DAY\_MEDICINE\_DOSES} for the day for a given child (id) 
+    	during the given month during the given year.
+    \item[register\_medicine\_taken.php] Register a dose of medicine taken. Accepts a post object with the fields \code{child\_id}, \code{medicine\_id}, 
+    	\code{time}, \code{day\_date}, \code{health\_state\_id} and \code{medical\_plan\_dose\_id}. If there is an entry for that dose id that day, the method does 
+    	nothing and simply returns $unique=false$. Otherwise, it calculates a reward, and updates \code{DAY\_MEDICINE\_DOSES} with the entry. 
+    	Returns the reward for that dose. Then it adds the calculated reward to the child's total credits in the \code{CHILDREN} table. If 
+  		no time is given, a default time of 00:00:01 is set.
+    \item[remove\_plan\_dose.php] Deletes the entry in the table \code{MEDICAL\_PLAN\_DOSES} which corresponds to a given id. Returns
+  		the number of deleted rows.
+    \item[remove\_plan\_medicine\_at\_time.php] During development of GAPP, it was discovered that using a
+  		combination of \code{child\_id}, \code{medicine\_id} and \code{time} as the key for removing elements in the \code{MEDICAL\_PLAN\_DOSES}
+  		table would be easier than using an ID. Therefore the need for this module arised, and it simply removes all entries in the
+  		table that fit the criteria.
+    \item[set\_child\_state.php] Takes a child ID and a state ID and sets the current state of the given child to the specific state given as input. Also updates 
+    	the table \code{CHILDREN\_LOG\_DAYS} with the given health state.
+\end{description}

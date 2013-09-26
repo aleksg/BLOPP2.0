@@ -1,0 +1,17 @@
+
+\subsection{Wifi access and caching of database records}
+\label{sec:wifi-caching}
+The application is currently very dependent on having network access in order to run at all. We are making a lot of HTTP requests, and we never cache the results. This introduces
+performance issues. This could be avoided by introducing a caching service. The application should store 
+information about when the last database update occured, and update the cached information appropriately. This is a part of the system that would take a lot of time to implement, 
+and we just did not have enough time.  
+
+
+Once the device loses its internet connection, the application should use these cached results to update the different screens, for example the log. 
+This caching service should also cache information about treatments that is done when the device is not connected. For instance, if a child takes a 
+medication, the device stores this information. Once the device connects to internet, the applications should push these changes to the webservice, 
+which, in turn, updates the database records, and thus we have applications that is not so ``tied up'' to a device's internet access. This could also 
+introduce the possibility to never connect to internet at all, by just using the stored data.   
+
+
+  

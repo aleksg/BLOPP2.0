@@ -1,0 +1,61 @@
+\chapter{Further Work}
+\label{chap:furtherWork}
+This chapter gives an overview of some of the ideas both the customer and the developers had for further development of the application. This includes a description of further development, analysis of the user groups and work towards NAAF and the health department.
+The main part of the work to be done after the end of this project is connected to requirements that has been taken out of this project due to limitation of time and resources. Other issues remaining is connected to the security and privacy of the patient's treatment log and storing sensitive information.
+Section \ref{sec:frcompleted} lists the overall requirements that have not been implemented during the project. These requirements has either been requested early in the process of have been brought up during discussions and meetings with the stakeholders. 
+
+
+% Here goes the major potential improvements such as privacy/security, rewardsystem and connection
+\section{Improvements}
+\label{sec:Improvements}
+The following sections describes the ideas we had for future improvements to the applications. It is parted into subsections for improvements in the fields of database records, the reward system, the distraction and the web application.
+
+\input{FurtherWork/WebAccess}
+\input{FurtherWork/SecurityAndPrivacy}
+
+\subsection{Rewardsystem}
+The children's application (CAPP) is all about changing the children's view of medication to something positive. It shall be a motivation for the children to take their medication. It is therefore an important task to entertain them and give them some form of reward when they take their medication. As for now, we have given stars to the child after completed medication. The stars are in a treasure chest where the child can see how many stars he or she has. This is a simple reward, but worked fairly well during the user tests. However, it may be boring over time. 
+
+The initial idea was to have a shop where the children could buy clothes and other items to their avatar. The stars earned from finishing treatments would serve as credits in the shop. This was not implemented due to time restrictions. It is also possible to take this to the real world, e.g. that the child gets a lollipop for every 10th star, but this would have to be supervised by the parents. 
+ 
+
+There is an endless line of opportunities for this reward system, and we chose the simplest implementation, so we would have something to test. 
+
+\subsection{Distraction sequence for children}
+During our workshop, we came up with a lot of ideas for distractions for the children. These would range from simple animation sequences, like what we decided to implement, to more complex 
+things like games that would not require a lot of movement and could therefore help during longer treatments. 
+
+The distraction sequence is one of the fields were we feel it has more or less never ending possibilities for improvement, and as more research into what children finds distracting, but not to the point 
+where they can't take their medicine, this distraction sequence can be evolved.
+
+
+\subsection{User testing of the guardian application}
+GAPP has not yet been user tested on actual parents of asthmatic children. This has to be done to get an understanding of how they interact with the system, and to get knowledge about what they think of an application of this type. This is a system to make it easier for the guardians to give their children medications. While it is important that the children likes the system, it is also important that the parents feel it helps them give their children their medicines, without it being a big time waster.
+
+\subsection{Web application}
+There is a possibility of making this application as a web application, as a whole. By extracting the functionality and running it on a web service it would make it easier for people to use it across platforms. Done right, it may run on all devices with an internet connection. This may also give an easier integration with external information such as air pollution forecast, pollen forecast, temperatures, etc. Since our application is written in Java, using Android SDK, it will not run on an internet server as is. Making a web application will require an almost complete refactoring of the source code.
+
+ 
+\subsection{Support for more children}
+Currently, the application only use one child, but there are implemented support for using more children. Each child has its own id (childId), and support for more children can be implemented without much change of the existing code. There should also be concidered using accounts for the guardians connected to the children, in case of the guardians having more than one asthmatic child. 
+  
+
+% Here goes the minor ideas and improvements for further work
+\section{Ideas and minor improvements}
+
+
+\begin{description}
+
+\item[Webinterface] The doctors may prefer to set up the users medication plans through a web interface on their computers. This part may be integrated into existing systems. 
+
+\item[Other devices] The application are fitted for a phone running the Android operating system. For the future it should also be scalable to tablets. There may be more interesting for a child to work on a tablet than a phone. There will also be much more space for content. This extra space gives greater potential of the reward system. It should also be available on other operating systems than Android, e.g. iOS or Windows Phone. This will improve the availability for the users, not limiting them to Android phones. 
+
+\item[Overall graphical design] The priorities have been to make the major functionality work. We have used lots of time making the applications understandable and easy to use, but there is still a great potential in making the applications interaction design better. 
+
+\item[Personalize the system] The application may be more personalized. E.g. "It's time to take medication" could be "It's time to take medication, Eric". By involving the users name more in the system, they may feel more appreciated. 
+
+\item[Integration of external elements] The distraction part of the application may be integrated with a story or other external elements. I. eg. a story where the children will need to take medicine in order to get the next part of the story.
+
+\end{description}
+
+

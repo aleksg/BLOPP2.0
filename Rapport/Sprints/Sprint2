@@ -1,0 +1,115 @@
+\Section{Sprint 2}
+
+
+The development sprints are the most important parts of the scrum development process. Therefore the sprint reports are a vital part of our final report of the project. The following chapter presents an overview of how we planned, worked and completed sprint two. 
+
+\\
+Sprint 2 started on 17th of September and ended on 30th of September, giving it a duration of 14 days. The length of the sprints were discussed with the customer and the advisor, and all agreed on 14 days as a suitable length of a sprint. 
+
+\\
+The chapter is divided into five parts, starting with the overall plan for the sprint in Section 5.1. Followed by the sprint backlog, which enlists the tasks that have been chosen for the sprint. Section 5.3 will focus on the work made to the GUI, the logic implemented in the application and the work done to the database and database access in the application. The chapter ends with what have been tested and the corresponding results in Section 5.4 and a sprint review in Section 5.5.
+
+\subsection{Sprint Plan}
+The plan for the sprint was to add more of the graphical user interface to the application. The GUI implemented during this sprint, would later on be connected to logic to complete the functionality wanted. 
+
+\\
+The team also wanted to add some functionality through adding logic to the different elements of the application. The main focus was the log, the medication plan, the notifications and the treatment distraction. 
+
+
+
+\subsection{Sprint backlog}
+This section contains a table with the sprint backlog, which is a smaller part of the product backlog. The goal is to get the entire backlog implemented during the sprints. 
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ |p{4.0cm} 	 |	p{4.0cm} 	| 	p{4.0cm} 	 |}
+\hline
+  \# & ID 	& Task 	& Story points 	& Estimated hours 							& Responsible \\
+\hline
+  1.1 & Make some kind of distraction through the Karotz	&  8  	& 40 &  Esben \\
+\hline
+  1.2 & Make method for saving a treatment throught Karotz  & 4  & 20	& \\
+\hline
+  1.3 & Make method for starting treatment through Karotz  & 2	&   10	&  \\
+\hline
+  1.4 & Make the distraction logic class 	& 10  & 50 & Eirik \\
+\hline
+  2.1 & Calendar view for log & 10 &  50 & Esben\\
+\hline
+  2.2 & Backend solution for saving the log & 10 & 50 & \\
+\hline
+  3.1 & Make the reminder for Android platform & 6 & 30 & Aleks \\
+\hline
+3.2 & Make the reminder for Karotz & 6 & 30 &  \\
+\hline
+3.3 & User interface for changing reminder preferences & 6 & 30 & Eirik \\
+\hline
+3.4 & Secure that the reminder is giving independently of internet connection and sound level on the phone & 2 & 10 &  \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+The team also decided to continously write on the report, attend lectures and hold advisor and customer meetings during the sprints. These tasks are not included in the backlog, but the hours spent are included in the status reports. 
+
+\subsection{Design and Implementation}
+The team has continued to add graphical user interfaces to represent the different functionality in the application. This sprint the focus has been fairly broad. Reason for this was the customer's priorities of what functionality should be implemented. All task were made independent of other task, and there were no easy way for two developers to work on a smaller task at the same time. Due to this, the development team was able to have a broad focus.
+
+\\
+The customer and the developers were also very curious to have the Karotz would be implemented with the application. The developer team chose to have one developer focus on this task during the sprint. 
+
+
+
+\subsubsection{User Interface Layer}
+The team implemented the log as a calendar view. This was based on open source code, which the developers changed some, to ensure it would work the way it should. SKRIV NOE MER OM HVORDAN LOGGEN ER. 
+
+\\
+During the sprint the developers added countdown functionality to the distraction. A child should take ten breaths from the inhalator to make a treatment the right way. To ensure this the distraction will count down from ten to zero. After a treatment is finished, the user will be rewarded with stars.
+
+\\
+To the settings menu the team added functionality for making a treatment plan. By using simple menus a user would be able to choose which medicines should be included and what dosage of each medicine. The user should also be able to set the time for reminders. The GUI for this was implemented during the sprint, but the logic and database connections were yet to be implemented. 
+
+\\
+Any changes to the shop?
+
+\\
+The developers added functionality for dressing up the avatar with different costumes. For the time being the costumes were not interchangeable. 
+
+
+\subsubsection{Application Logic Layer}
+To the treatment and distraction part of the application, the team implemented logic to make the treatment understandable for children. Using logic to change the GUI to give feedback on how do to the treatment was how the team chose to solve this task. 
+
+\\
+During the sprint the team implemented notifications to remind the user to take his/her medicine. The logic behind this is done by a "Notification Manager" which fires a method for putting a notification on the status bar of the phone. 
+The team found out halfway during this sprint that it was necessary to change the notifications into alarms. Alarms are able to run independently of any other methods, in difference to notifications which are fired by a method internally. To ensure that the user would get the correct reminders it was necessary to change this. 
+
+\subsubsection{Data Persistence Layer}
+Yngve skriver noe fornuftig om databaselaget.
+
+\subsection{Testing and Results}
+
+
+\subsubsection{Testing}
+
+
+\subsubsection{Results}
+
+
+\subsection{Sprint Retrospective}
+
+
+\paragraph{What went well?}
+
+
+\paragraph{What shall we start doing?}
+
+
+\paragraph{What could have gone better?}
+The team must send the meeting reports to the customer within 24 hours.
+
+
+\paragraph{What should we stop doing?}
+
+
+\subsubsection{Sprint Burndown Chart}
+

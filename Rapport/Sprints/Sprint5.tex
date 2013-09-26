@@ -1,0 +1,363 @@
+\chapter{Sprint 5}
+\label{chap:sprint5}
+
+The following section presents an overview of how we planned, worked and
+completed sprint 5.
+
+Sprint 5 started on 29th of October and ended on 11th of November, giving it a duration of 14 
+days.
+
+The chapter is divided into five parts, starting with the overall plan for the
+sprint in Section \ref{sec:sprint5sprintplan}. Followed by the sprint backlog, which
+enlists the tasks that have been chosen for the sprint. Section
+\ref{sec:sprint5designAndImplementation}.
+will focus on the work made to the GUI, the logic implemented in the application and the work done to the database and database access in the application.
+The chapter ends with what have been tested and the corresponding results in
+Section \ref{sec:sprint5testingAndResults} and a sprint review in Section
+\ref{sec:sprint5sprintRetrospective}.
+
+\section{Sprint Plan}
+\label{sec:sprint5sprintplan}
+The plan for sprint 5 was to finishing the user interface, look for and fix errors and refactor, document and comment code. At the end of this sprint we planned for a code freeze for the sourcecode, meaning no changes were to be made after this sprint. The sprint started with the usability test, and we made the rest of the sprintplan based on the feedback we got from this test.
+
+\section{Sprint backlog}
+This section contains a table with the sprint backlog, which is a smaller part of the product backlog. The goal is to implement the entire sprint backlog implemented during the sprint.
+
+\begin{table}
+	\begin{center}
+		\begin{tabular}{|p{2.0cm}| p{8.0cm}| p{2.0cm}|p{2.0cm}|p{2.0cm}|}
+			\hline
+			\#  ID 	& Task 	& Story points 	& Estimated hours & Responsible \\
+			\hline
+ 			1.1 & Refine distraction for CAPP & 2 & 8 & Yngve\\
+ 			\hline
+ 			1.2 & Fix medicine choice before unscheduled medication & 2 & 8 &Yngve\\
+ 			\hline
+ 			1.3 & Fix jumping images during child distraction & 1 & 4 & Yngve\\
+ 			\hline
+ 			1.4 & Fix correct heading in all pages & 1 & 4 & Eirik and Esben\\
+ 			\hline
+ 			2.1 & Bugfix new manuscript on Karotz & 1 & 4 & Yngve\\
+ 			\hline
+ 			2.2 & Bugfix Karotz after usability test: double RFID check & 1 & 4 & Yngve\\
+  			\hline
+ 			3.1 & Delete old alarms & 2 & 8 & Eirik\\
+ 			\hline
+ 			4.1 & Make better layout for info about medication & 1 & 4 & Aleksander\\
+ 			\hline
+ 			5.1 & Write javadoc for all code & 3 & 12 & Esben, Eirik\\
+ 			\hline
+ 			5.2 & Remove unused code (imports, classes, etc) & 1 & 4 & Aleksander, Eirik and Esben \\
+ 			\hline
+ 			6.1 & Fix Wifi-related crashes in CAPP & 0.5 & 2 & Esben \\
+ 			\hline
+ 			6.2 & Fix Wifi-related crashes in GAPP & 0.5 & 2 & Esben \\
+ 			\hline
+ 			7.1 & Perform and document unit tests of all we access pages & 1 & 4 & Yngve \\
+ 			\hline
+ 			\bfseries{SUM} & & \bfseries{19} & \bfseries{76} & \\
+ 			\hline
+ 			\hline
+		\end{tabular}
+	\end{center}
+	\caption{Backlog for sprint 5}
+\end{table}
+
+\section{Design and Implementation}
+\label{sec:sprint5designAndImplementation}
+Since this was the last sprint, the code had to be refactored and commented. During this sprint we made sure to delete all classes that were not in use, merge classes were possible and logical and mark all deprecated classes. This resulted in a much more understandable and readable code. 
+
+After deleting all unused code, we wrote javadoc\cite{javadoc} for all code. Since javadoc is a common use among java developers, this will make the source code easier to read and understand, for people picking up the code in the future. 
+
+\subsection{User Interface Layer}
+\subsubsection{CAPP}
+CAPP underwent minor changes to the user interface. The main menu had it's icons changed out, to give it a nicer, more colorful and thus more attractive look. 
+
+The overview of how many stars the child has earned was given a bigger star at the top, to easily show how many stars the child has earned in total. 
+
+\subsubsection{GAPP}
+GAPP underwent very small changes in this sprint. To the section where users may view information about medication, we added pages for viewing information about specific medicines, and a link to the instructions images implemented earlier. 
+
+\subsubsection{Karotz}
+Based on the usability test, the manuscript for both Karotz and CAPP were updated. The counting action was reworked to include instructions for the child to press
+the medicine in order to start the medication process. Also, whenever the user was told to hold a nanoz to the rabbit, they were previously told to hold it against the
+rabbit's stomach. The detector is placed directly beneath the Karotz' nose, so the dialogue was changed to accomodate this. The final manuscript is laid out in detail in appendix \ref{apx:karotzManuscript}.
+
+\subsection{Application Logic Layer}
+The applications still had some bugs at the beginning of the sprint. During this sprint we smashed a lot of them. Mentioning some, we fixed a problem with which medicineID was sent to the database, a problem with deleting alarms was fixed and a problem with the alarm not letting the user turn off the sound was fixed. 
+
+
+\subsection{Data Persistence Layer}
+Changes were made to the following files for web access:
+\begin{itemize}
+  \item \emph{get\_log\_days\_for\_child.php:} This module would return days in the future, with the last recorded health state id. This behavior was
+		changed so that the module doesn't return entries for future days. 
+\end{itemize}
+
+
+\section{Testing and Results}
+\label{sec:sprint5testingAndResults}
+
+\subsection{Testing}
+During this sprint our main focus was on refactoring, commenting and bugfixing. This meant we did alot of different tests during this sprint. 
+The sprint started with a usabilitytest, using CAPP and Karotz app to test if children could actually follow the instructions, and to see if our system behaved
+the way we intended it to. We then did unit tests for all web access modules, to make sure the correct fields were returned from the database. Lastly we 
+did several integration tests to ensure that the changes implemented after the usability test, and the rest of the system, worked as intended
+
+\input{Sprints/Sprint5/UnitTests}
+
+\begin{table}
+	\begin{center}
+		\begin{tabular}{|p{3.0cm}|p{14.0cm}|}
+			\hline
+			\bf{Item} & \bf{Description}\\
+			\hline
+			\bf{ID} & USABILITY5.1\\
+			\bf{Description} & Test to see if the children can follow the isntructions given and take their medicine correctly when an alarm is given.\\
+			\bf{Date} & 30.10.2012\\
+			\bf{Responsible} & Eirik\\
+			\bf{Subject} & The Karotz application and CAPP\\
+			\bf{Precondition} & 
+				\begin{tabulitem}
+					\item Working version of CAPP and the karotz application.
+					\item The child registered in the database is in the correct health state.
+					\item Child and one parent present. The parent should be familiar with giving asthma medications.
+					\item Wireless wpa2 secured connection.
+				\end{tabulitem}\\
+			\bf{Steps} &
+			\begin{tabulenum}
+				\item Explain the test for the children, in an easy to understand way.
+				\item Set up an alarm to go off.
+				\item Let the parent get the alarm, and see how well the child and parent is able to follow the instructions given by the system.
+			\end{tabulenum}\\
+			\hline
+			\bf{Results} & Generally the system worked as intended. The children successfully took their medicine, and had little trouble following the instructions.
+							We discovered some errors relating to the alarm, aswell as some of the distraction sequence bugging, some parts skipped stages if the child
+							pressed more than once, others had inaccurate instructions (like holding the Nanoz infront of karotz belly, when it's the nose it needs to be
+							in front of).\\
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{USABILITY5.1}
+	\label{tab:usability5.1}
+\end{table}
+
+\begin{table}
+	\begin{center}
+		\begin{tabular}{|p{3.0cm}|p{14.0cm}|}
+			\hline
+			\bf{Item} & \bf{Description}\\
+			\hline
+			\bf{ID} & INTEGRATION5.1\\
+			\bf{Description} & Test of CAPPs alarm and distraction sequences.\\
+			\bf{Date} & 06.11.12\\
+			\bf{Responsible} & Eirik\\
+			\bf{Subject} & CAPP\\
+			\bf{Precondition} & 
+				\begin{tabulitem}
+					\item Working version of CAPP installed on phone or AVD (Android Virtual Device).
+					\item Internetconnection for databaseaccess.
+					\item Medicationplans for the correct healthstate registered in the database.
+				\end{tabulitem}\\
+			\bf{Steps} &
+			\begin{tabulenum}
+				\item Turn on the phone or AVD, and wait until the time of the alarm.
+				\item Receive the alarm.
+				\item Press the medicine to start the distraction sequence
+				\item Follow the instructions and take note if any instructions are skipped or missing.
+			\end{tabulenum}\\
+			\hline
+			\bf{Results} & We found that the alarm set alarms for all healthstates, not just the one the child was currently in. Aside from this, the alarm fired correctly.
+						Some of the changes we had done after the usability test made one of the sound files and animations in the distraction sequence 
+						unsynchronized. Since the distractionsequence have checkpoints where the user have to interact with the application, only that 
+						specific part of the distraction was out of synch, the rest ran as intended.\\
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{INTEGRATION5.1}
+	\label{tab:integration5.1}
+\end{table}
+
+\begin{table}
+	\begin{center}
+		\begin{tabular}{|p{3.0cm}|p{14.0cm}|}
+			\hline
+			\bf{Item} & \bf{Description}\\
+			\hline
+			\bf{ID} & INTEGRATION5.2\\
+			\bf{Description} & Testing that the log updates correctly based on registered medication and pollen feed.\\
+			\bf{Date} & 06.11.12\\
+			\bf{Responsible} & Esben\\
+			\bf{Subject} & GAPP\\
+			\bf{Precondition} & 
+				\begin{tabulitem}
+					\item Working version of GAPP installed on phone or AVD.
+					\item Internetconnection for databaseaccess.
+					\item Completed medications and pollen feeds registered in the database.
+				\end{tabulitem}\\
+			\bf{Steps} &
+			\begin{tabulenum}
+				\item Open GAPP on the phone or AVD.
+				\item Navigate to the log.
+				\item Check if the visual representation in the log corresponds to the data in the database.
+			\end{tabulenum}\\
+			\hline
+			\bf{Results} & The log updated correctly.\\
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{INTEGRATION5.2}
+	\label{tab:integration5.2}
+\end{table}
+
+\clearpage{}
+\begin{table}
+	\centering
+		\begin{tabular}{|p{3.0cm}|p{14.0cm}|}
+			\hline
+			\bf{Item} & \bf{Description}\\
+			\hline
+			\bf{ID} & INTEGRATION5.3\\
+			\bf{Description} & Testing that the medicationplans is correctly registered to their respective healthstates\\
+			\bf{Date} & 05.11.12\\
+			\bf{Responsible} & Eirik\\
+			\bf{Subject} & GAPP\\
+			\bf{Precondition} & 
+				\begin{tabulitem}
+					\item Working version of GAPP installed on phone or AVD.
+					\item Internetconnection for databaseaccess.
+					\item Medicationplans registered to various healthstates.
+				\end{tabulitem}\\
+			\bf{Steps} &
+			\begin{tabulenum}
+				\item Open GAPP on the phone or AVD.
+				\item Navigate to medisinplan page.
+				\item Choose each of the healthstates in turn, and see if the medicines listed under each corresponds to the medicationplans in the database.
+			\end{tabulenum}\\
+			\hline
+			\bf{Results} & The medicationplans is correctly registered to their respective healthstates.\\
+			\hline
+		\end{tabular}
+	\caption{INTEGRATION5.3}
+	\label{tab:integration5.3}
+\end{table}
+
+% \begin{table}
+% 	\begin{center}
+% 		\begin{tabular}{|p{3.0cm}|p{14.0cm}|}
+% 			\hline
+% 			\bf{Item} & \bf{Description}\\
+% 			\hline
+% 			\bf{ID} & \\
+% 			\bf{Description} & \\
+% 			\bf{Date} & \\
+% 			\bf{Responsible} & \\
+% 			\bf{Subject} & \\
+% 			\bf{Precondition} & \\
+% 			\bf{Steps} &
+% 			\begin{enumerate}
+% 				\item ~
+% 			\end{enumerate}\\
+% 			\hline
+% 			\bf{Results} & \\
+% 			\hline
+% 		\end{tabular}
+% 	\end{center}
+% 	\caption{Unit test template}
+% \end{table}
+
+\subsection{Results}
+The usability test gave us much feedback on the system, and several errors that had to be fixed. The complete testresults can be found in section \ref{sec:usabilitytestonchildren}, but the main issues were centered around the alarms in CAPP, and the distraction sequence being vulnerable to skipping instructions if the children pressed too fast, 
+which was often the case.
+
+The unit tests performed during this sprint all returned the expected results, which then allowed us to move on to the integration tests we had planned. These uncovered some more 
+issues that either wasn't caught by the usability test, or were a result of the changes we made in response to the usability test. The new dialogue added to the CAPP distraction sequence meant that some of the animations now were not synchronized with the sound of the Karotz counting. To fix this we made separate manuscripts for the android version and the Karotz, making it easier to synchronize.
+We also discovered a problem where the alarms were registered from all health states, not just the one the child is currently in, and sending many more alarms than necessary. This problem was fixed by a method checking the health state before invoking alarms. 
+
+\section{Sprint Retrospective}
+This section contains an evaluation of the sprint. The evaluation is done mainly by the us, but feedback from the customers are added to the retrospect.
+
+\label{sec:sprint5sprintRetrospective}
+
+\subsection{What went well?}
+We finished the implementation of desired functionality in time. Even though not all functional requirements were fulfilled, the requirements fulfilled are done properly and without major errors. 
+
+\subsection{What shall we start doing?}
+\begin{enumerate}
+	\item Focus only on the report and the presentation
+\end{enumerate}
+
+\subsection{What could have gone better?}
+All went very well during this sprint. 
+
+\subsection{What should we stop doing?}
+The sourcecode is now under code-freeze. If errors are found, we should report them in the section for further work. 
+
+\subsection{Sprint Burndown Chart}
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=15cm]{Pictures/Charts/Sprint5burndown}
+	\end{center}
+	\caption{Sprint 5 burndown chart}
+	\label{fig:sprint5burndown}
+\end{figure}
+
+\begin{table}
+	\begin{center}
+ 	\begin{sideways}
+ 		\begin{tabular}{| l | p{6.5cm} | c | c | l | l | l | }
+ 			\hline
+			\#  ID 	& Task 	& Story points 	& Estimated hours & Actual & Estimated left & Responsible \\
+			\hline
+ 			1.1 & Refine distraction for CAPP & 2 & 8 & 6 & 0 & Yngve\\
+ 			\hline
+ 			1.2 & Fix medicine choice before unscheduled medication & 2 & 8 & 7 & 0 & Yngve\\
+ 			\hline
+ 			1.3 & Fix jumping images during child distraction & 1 & 4 & 4 & 0 & Yngve\\
+ 			\hline
+ 			1.4 & Fix correct heading in all pages & 1 & 4 & 4 & 0 & Eirik and Esben\\
+ 			\hline
+ 			2.1 & Bugfix new manuscript on Karotz & 1 & 4 & 2 & 0 & Yngve\\
+ 			\hline
+ 			2.2 & Bugfix Karotz after usability test: double RFID check & 1 & 4 & 1 & 0 & Yngve\\
+ 			\hline
+ 			3.1 & Implement Thobias' changes to the report & 1 & 4 & 4 & 0 & Yngve\\
+ 			\hline
+ 			3.2 & Document usability testing, add usability test to sprint 4 & 1 & 4 & 4 & 0 & Eirik\\
+ 			\hline
+ 			4.1 & Delete old alarms & 2 & 8 & 8 & 0 & Eirik\\
+ 			\hline
+ 			5.1 & Make better layout for info about medication & 1 & 4 & 4 & 0 & Aleksander\\
+ 			\hline
+ 			6.1 & Write javadoc for all code & 3 & 12 & 7 & 0 & Esben, Eirik\\
+ 			\hline
+ 			6.2 & Remove unused code (imports, classes, etc) & 1 & 4 & 3 & 0 & Aleksander, Eirik and Esben \\
+ 			\hline
+ 			7.1 & Fix Wifi-related crashes in CAPP & 0.5 & 2 & 1 & 0 & Esben \\
+ 			\hline
+ 			7.2 & Fix Wifi-related crashes in GAPP & 0.5 & 2 & 1 & 0 & Esben \\
+ 			\hline
+ 			8.1 & Perform and document unit tests of all we access pages & 1 & 4 & 8 & 0 & Yngve \\
+ 			\hline
+ 			\bfseries{SUM} & & \bfseries{19} & \bfseries{72} & \bfseries{64} & \bfseries{0} & \\
+ 			\hline
+ 		\end{tabular}
+ 	\end{sideways}
+ 	\end{center}
+ 	\caption{Sprint Retrospective, Sprint 5}
+ 	\label{tab:sprint5burndown}
+\end{table}
+
+Table \ref{tab:sprint5burndown} and figure \ref{fig:sprint5burndown} show the burndown chart for the fifth and final sprint. Since we had
+a reduced amount of story points for this sprints, everything was completed three days before schedule.
+
+We had planned 19 story points for the fifth sprint, which meant 72 estimated work hours. We worked for a total of 64 hours, and had 0 hours
+left at the end of the sprint, so all 19 story points were completed. The reduced work speed when compared to other sprints can be explained
+by a shifted focus from programming tasks which are documented in the sprint, to planning and documentation exercises related to the usability
+test, the report and the final presentation. These hours are not formalized as sprint tasks and are therefore not included in the estimates.
+We were satisfied with the sprint result.
+
+\subsection{Screenshots}
+Since this was our last sprint, we have included some screenshots of the work that is done.
+\input{Sprints/Sprint5/Screenshots}

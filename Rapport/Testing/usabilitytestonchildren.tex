@@ -1,0 +1,84 @@
+\subsection{Usability testing of the distraction}
+\label{sec:usabilitytestonchildren}
+Since our system is targeted towards children it was important to test the system properly on children, to see if the effects where as we hoped for. This was difficult to do early in the project since the children could not be expected to deal with paper prototypes, as they were as young as three years old. Because we had to create our system from scratch, it took a long time to get something robust enough to test, there was a long process of unit and integration testing going into making the communication between two Android applications and one Karotz application.
+
+This led to a late usability test, held on 30th of October 2012. At this point we had a working version of the system. 
+
+The preconditions for the test were:
+\begin{itemize}
+	\item Working version of CAPP and the karotz application.
+	\item The child in the database is registered to the correct health state.
+	\item Child and parent present. The parent should be familiar with giving asthma medications\footnote{The application gives information about this, but it is not what is being tested}.
+	\item Wireless wpa2 secured connection for the karotz.
+\end{itemize}
+
+The test started with some basic introduction, done informally. Trying to run a standard usability test on already shy children was not optimal, so we explained to the parents, and let them tell the children what was going to happen. After giving an introduction, we registered a new medication plan in the database, with alarm set for one or two minute in the future. We had to register it this way to make sure the reward system and log updated properly in response to the treatment.\\ 
+The test scenario we wanted for CAPP was as follows:
+\begin{itemize}
+	\item The Android device receives an alarm. The parent hands the phone to the child.
+	\item After finding the correct medicine, based on the picture on the alarmscreen, the child starts the distraction sequence.
+	\item The child follows the instructions given during the distraction sequence, and does as the karotz on the screen.
+	\item The child, helped where necessary by their parent, successfully takes their medicine.
+	\item After the distraction finishes, the child is done with their treatment, and receives the reward in the application.
+\end{itemize}
+For the karotz application, this scenario plays out a little bit differently:
+\begin{itemize}
+	\item The robot gives a notification.
+	\item The child follows the instructions to turn off the notification and ready the distraction.
+	\item After fetching the parent, the child is given the yellow nanoz by their parent, and holds the yellow nanoz close to the karotz' nose to start the distraction sequence.
+	\item The child and parent follows the instructions given during the distraction sequence, which helps the child successfully take their medicine.
+	\item After the distraction sequence finishes the child uses the green nanoz to collect their reward from the karotz.
+\end{itemize}
+
+Before the test we had already discovered that the Karotz was quite selective in it's internet connections security protocols, and it could not connect to for example the "eduroam"
+network found at the university. The previous day we tried using a wireless router of our own and connecting this to one of the internet cables at a computer lab at NTNU. This apporach had worked fine, but we wanted to make sure it was up and running by the time the test were to start. We found out this would not
+work with the internet at NSEPs usability lab, and we only barely got it up and running by using a smartphone to set up a wireless hotspot for the Karotz. A description of the problems are reported, for future development in \ref{sec:Improvements}. 
+
+The test was done using the hallway method, meaning we let users who had little or no prior knowledge of the system test it. Some pictures from the tests can be seen below:
+\begin{figure}
+	\centering
+		\includegraphics[width=\linewidth]{Pictures/usabilitytestCAPP}
+	\caption[Usability test CAPP distraction]{Child taking their medicine while following the CAPP distraction sequence. Photo: Elin Høien}
+	\label{fig:cappdistraction}
+\end{figure}
+
+\begin{figure}
+	\centering
+		\includegraphics[width=\linewidth]{Pictures/usabilitytestkarotz}
+	\caption[Usability test Karotz distraction]{Child taking their medicine while following the Karotz distraction sequence. Photo: Elin Høien}
+	\label{fig:karotzdistraction}
+\end{figure}
+
+\begin{figure}
+	\centering
+		\includegraphics[width=0.4\paperheight, angle=90]{Pictures/usabilitytestinstructions}
+	\caption[Usability test CAPP instructions]{Child distributing medicine to the karotz while looking at the instruction manual in CAPP. Photo: Elin Høien}
+	\label{fig:cappinstructions}
+\end{figure}
+
+After the internet connection for the karotz was secured, the test ran without other big problems. We observed the following during the tests: the children
+managed to follow the instructions given by both CAPP and the Karotz application. Some of the children were reluctant to actually take medicine, but they were eager to see what happened
+next on the application, and we hope this will motivate them to take their medicine, even for the children who does not really want to take their medicine. We feared that our reward system would be too simple and
+therefore not rewarding enough, but the children who tested the system seemed very interested in it, even though it was just points you gather in the form of stars. One of the children started comparing the amount after each treatment and ran the treatment many times in order to get the most
+points possible. (We later implemented a time check, blocking the user from doing several treatments in a row).
+We noted that the children were quick to become friendly with the Karotz, especially when it started talking.
+
+We also uncovered quite a few bugs and parts that needed to be redone. For CAPP, the most important of these was:
+\begin{itemize}
+	\item The alarms were not deleted properly. Since we update them regularly to ensure they're fired properly, this resulted in alarms firing at the same time, resulting in a lot of noise, aswell as
+		untimely fired alarms (which should have been moved).
+	\item The alarm sound did not turn off when the distraction sequence ended, or when the "stop alarm" button was pushed. 
+	\item After the distraction sequence the children did not understand that the chest was interactable, since the rest of the sequence were spoken, and this was not. However, after seeing the chest
+		in the main menu, they understood that they could click it.
+	\item If the user pressed the screen multiple times, this registered as multiple clicks, and parts of the distraction sequence was skipped. This happened frequently, as the children pressed again
+		because of the delay between the first click register, until the screen updated.
+	\item Part of the instructions had been left out in the distraction sequence, namely the one about rinsing your mouth after taking the medication.
+	\item The instruction about pressing the medicine once, before breathing 10 times, were not clear. One of the children pressed the medicine 10 times.
+\end{itemize}
+There were also bugs and problems related to the Karotz, aside from the big issue with network connection:
+\begin{itemize}
+	\item The Karotz instructed the user to hold the Nanoz close to its belly, which is incorrect. For the Nanoz to register, they must be held close to the nose. 
+	\item The distraction sequence never says to attach the medicine to the chamber.
+	\item Holding the Nanoz close for too long makes the Karotz skip instructions. 
+	\item As with CAPP, it was not clear that they had to press the medication once before inhaling 10 times.
+\end{itemize}

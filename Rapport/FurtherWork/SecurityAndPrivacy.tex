@@ -1,0 +1,16 @@
+
+\subsection{Security and privacy}
+\label{sec:sec-and-privacy}
+The application is, as mentioned, using a webservice to access database records. This webservice is currently not using any form of encryption or protection.
+Ideally the webservice should be using the HTTPS protocol instead of HTTP, and have proper password protection, to avoid that records of childrens medication history is publicly
+available. This will have some issues on performance, but if a proper caching system is implemented as mentioned in Section \ref{sec:wifi-caching}, it would be hardly noticable.
+
+
+% We are at the time being not using any sort of personal information like SSN, street adress and so on. Though, we have it as a column in our database in case this is useful for further work.
+The only ``identifier'' we are currently using is the database ``id'' of a child, which is an automatically incremented number, and can be seen as a random identifier for a child, meaning that it does
+not have anything to do with a child at a personal level (not a username, name, emailaddress, ssn, etc.). This raises a question whether or not privacy is a real issue here. 
+For one to actually know which child has been taking which medicines, one must either know the stored database id for a child, or hack the system and get access to the name. 
+From our perspective, privacy is not a real issue that needs to be taken care of at the time being. 
+
+
+If however, the application in the future becomes more personalized as mentioned in Section (Minor improvements), these are issues that needs to be taken seriously, as medical history is considered sensitive information. 

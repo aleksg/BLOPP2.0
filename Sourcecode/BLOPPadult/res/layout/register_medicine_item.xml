@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <CheckBox
+            android:id="@+id/register_medicine_checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="CheckBox" />
+
+        <ImageView
+            android:id="@+id/register_medicine_item_imageview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/register_medicine_checkBox"
+            android:contentDescription="image"
+            android:src="@drawable/flutide_small" />
+
+        <TextView
+            android:id="@+id/register_medicine_item_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/register_medicine_checkBox"
+            android:layout_alignBottom="@+id/register_medicine_checkBox"
+            android:layout_marginLeft="23dp"
+            android:layout_toRightOf="@+id/register_medicine_item_imageview"
+            android:text="TextView" />
+
+    </RelativeLayout>

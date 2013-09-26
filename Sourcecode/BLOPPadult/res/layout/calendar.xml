@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/next_month_button"
+        style="?android:attr/buttonStyleSmall"
+        android:background="@layout/custom_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/NextMonth" />
+
+    <Button
+        android:id="@+id/prev_month_button"
+        style="?android:attr/buttonStyleSmall"
+        android:background="@layout/custom_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/PreviousMonth" />
+
+    <no.blopp.app.views.CalendarView
+        android:id="@+id/calendarview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/next_month_button" />
+
+    <TextView
+        android:id="@+id/month_of_year_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/prev_month_button"
+        android:layout_alignBottom="@+id/prev_month_button"
+        android:layout_centerHorizontal="true"
+        android:text="September 2012"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ListView
+        android:id="@+id/medicine_taken_listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/calendarview"
+        android:layout_toLeftOf="@+id/month_of_year_textview" >
+
+    </ListView>
+
+    <ListView
+        android:id="@+id/pollen_listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/medicine_taken_listView"
+        android:layout_toRightOf="@+id/month_of_year_textview" >
+
+    </ListView>
+
+</RelativeLayout>

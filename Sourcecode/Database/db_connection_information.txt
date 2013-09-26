@@ -1,0 +1,4 @@
+host='mysql.stud.ntnu.no'
+user='yngvesva_blopp'
+password='Naaf2012'
+db='yngvesva_blopp'

@@ -1,0 +1,56 @@
+\section{Coding Style}
+The applications uses Android as platform. As a consequence, most code will be
+written in Java. The coding style mentioned here only applies to code written
+in  Java. 
+
+\subsection{Package conventions}
+The package names for GAPP will be on the format ``no.blopp.app.X'', where X (lower case) describes the content of the package. 
+The package names for CAPP will be on the format ``no.blopp.app.med.Y'', where Y(lower case) describes the content of the package.
+For instance no.blopp.app.activities, or no.blopp.app.med.activities. 
+
+\subsection{Indentation}
+All statements, conditional expressions, function declarations and class
+declarations shall be written on a separate line. 
+
+\subsection{Curly Brackets}
+The opening curly bracket following a function or class declaration shall appear
+on the line below the declaration, with equal indentation as the function
+declaration. The closing bracket shall also appear with this indentation, on
+the line below the code block.
+
+\subsection{Naming Conventions}
+The following naming conventions will be used when writing code in Java. We will
+use an ``I'' in front of an interfacename, to better recognize these. That is
+the only place we have that kind of convention. Table \ref{tab:javaNamingConventions}
+shows an overview of the naming conventions for Java code.
+
+\begin{table}
+	\begin{center}
+		\begin{tabular}{|p{4cm}|p{4cm}|}   
+			\hline      
+			\bf{Type} & \bf{Convention} \\ 
+			\hline
+				Local variable & lowerCamelCase \\     
+			\hline
+			 	Class & UpperCamelCase \\
+			\hline
+			 	Interface & \emph{I}UpperCamelCase \\
+			\hline
+			 	Constants & UPPERCASE \\
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{Naming convention}
+	\label{tab:javaNamingConventions}
+\end{table}
+
+\subsection{Android views}
+The android framework has a lot of predefined elements like buttons, textviews
+and layouts. When creating these elements, they have an id referenced by
+``android:id= my\_id''. These id's will be a combination of type a\_b. ``a'' will be
+a constructive word describing the element. ``b'' will be the component. ``a''
+will be written in lowercase only, seperated with underscore. ``b'' will be in
+lowerCamelCase. Examples of this can be ``back\_to\_menu\_button'',
+``date\_textView'' and so on. The reason for this is that android automatically
+generates R.java, containing these id's. It should be easy to know excactly
+which id you are looking for when calling the method findViewById(id).

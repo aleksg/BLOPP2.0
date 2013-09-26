@@ -1,0 +1,23 @@
+  ____    __       _____    ______    ______
+ |  _ \  |  |     /  _  \  |   _  \  |   _  \
+ | |_| | |  |    |  / \  | |  | |  | |  | |  |
+ |    /  |  |    | |   | | |  |_|  | |  |_|  |
+ |  _ \  |  |___ | |   | | |   ___/  |   ___/
+ | |_| | |     | |  \_/  | |  |      |  |
+ |____/  |_____|  \_____/  |__|      |__|
+CONTENT
+=======
+This archive contains the source code for the BLOPP application
+
+FILES
+=====
+x- descriptor.xml
+- main.js
+- screen.xml
+- util.js
+- src
+   - Distraction.js
+   
+HELP
+====
+no :3

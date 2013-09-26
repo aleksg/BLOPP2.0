@@ -1,0 +1,88 @@
+﻿TODO: 
+
+- LEGGE TIL BILDER
+ Prestudy>Prestudy: 3.1, 3.2
+
+Fikse sammenslåtte kapitler, endre Introduction/ProcetInformation accordingly 
+
+- SPRINT 5 needs figure for sprint burndown chart.
+
+- Sprint 5 testing and results.
+
+- Chapter "Further work"
+> Support for more children
+> Write about the hardcoded parts
+
+- Chapter "Evaluation"
+
+- Appendices: (We are missing some, right?)
+>? 
+>? 
+
+
+Questions: 
+
+- Q1: Burde vi under development methodology nevne og drøfte andre typer agile metoder? Å bare snakke om waterfall virker kanskje litt copy/paste og lazy?
+
+- Q2: Språk og møter under QA???
+Ans1: enig, makes no sense. Men hva ellers skal vi ha under QA? testplan? og språk og møter under hvor? introduction>projectInformation?
+
+- Q3: Hvorfor er "Frameworks used in the project" under "Development Methodology"? Bør vi ha et eget kapittel som sier litt om eksterne systemer, 
+som database, karotz, rammeverk osv? Eventuelt må vi rename Development Methodology.
+Ans1: Jeg synes vi skal lage eget kapittel, og fylle inn mye mer i det kapittelet. Temaene nevnt over bør være med. (Aleks skrev dette).
+
+
+- Subsection "screenshots": Fiks formatering av bilder i en tabell-aktig sak.
+
+
+- Children with asthma:  Få inn bilder av medisinene, forstøveren, og hvordan de brukes av barnet. 
+
+- Gamification: Dette er bra. Kort og greit. Vurder gjerne allerede her hvilke gamification-elementer som passer best for barn. 
+
+- Karotz: Vis hva andre utviklere har gjort med Karotz. Vis eksempler på hva man kan gjøre (lese opp mail, vise messenger-status, osv)
+
+- Design workshop: Dette var litt tynt. Hva kom egentlig ut av denne? Hvilke ideer? Hvilke ble brukt videre?
+
+- Developement methods: Kanskje dere skulle ha vurdert waterfall vs agile, og så listet ulike smidige metoder, for deretter ha valgt scrum? Husk også at man trenger ikke følge Scrum helt etter boken. Man kan finne sin egen stil, så lenge man begrunner det. 
+
+- Sikkerhet personvern har dere hoppet glatt over. Sikkert greit for en prototyp, med det er viktig å drøfte
+
+- Bilder fra design workshop?
+
+
+
+
+Done tasks:
+
+Skal vi fortsatt ha rollen Bunny programmer eller burde denne renames?
+
+
+ Oppdatere UseCase.tex, alle usecasene baserer seg på 1 app...
+- Dette er nå delt i CAPP-usecases og GAPP-usecases.o
+
+
+Gå igjennom og oppdatere når vi får vite hvordan de ønsker rewardsystemet.
+	- Usecases endret. Functional requirements endret.
+
+
+ - Renaming til Karotz programmer. DONE
+
+
+LaTeX master
+ - Renamed til Document Owner. DONE
+
+
+- Fylle ut om NAAF i SWOT analysen (under opportunities)
+	- Done
+
+- Prestudy: Bedre forklaring på hvorfor gamification kan være negativt.
+	- Done
+
+Erstatte application med applications. 
+ - DONE
+
+Erstatte Parent Application og Children Application med det faktiske navnet når vi får dette. 
+ - DONE
+
+1.1.3 Bør vi ikke ha alt i samme tabell, eller skrive alt som en liste? Ser litt rart ut i Esben sine øyne.. 
+- DONE 

@@ -1,0 +1,194 @@
+\subsection{Database \LaTeX{} export for database}
+% phpMyAdmin LaTeX Dump
+% version 2.5.6
+% http://www.phpmyadmin.net
+%
+% Host: mysql.stud.ntnu.no
+% Generation Time: Sep 12, 2012 at 09:14 AM
+% Server version: 5.0.96
+% PHP Version: 5.2.4-2ubuntu5.25
+% 
+% Database : `yngvesva_blopp`
+% 
+
+%
+% Structure: AVATARS
+%
+ \begin{longtable}{|l|c|c|c|} 
+ \caption{Structure of table AVATARS} \label{tab:AVATARS-structure} \\
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} \\ \hline \hline
+\endfirsthead
+ \caption{Structure of table AVATARS (continued)} \\ 
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} \\ \hline \hline \endhead \endfoot \textbf{\textit{id}} & int(11) & Yes & NULL \\ \hline 
+credits & int(11) & Yes & 0 \\ \hline 
+\textbf{inventory\_id} & int(11) & Yes & NULL \\ \hline 
+ \end{longtable}
+
+%
+% Structure: AVATAR_INVENTORIES
+%
+ \begin{longtable}{|l|c|c|c|} 
+ \caption{Structure of table AVATAR\_INVENTORIES} \label{tab:AVATAR_INVENTORIES-structure} \\
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} \\ \hline \hline
+\endfirsthead
+ \caption{Structure of table AVATAR\_INVENTORIES (continued)} \\ 
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} \\ \hline \hline \endhead \endfoot \textbf{\textit{id}} & int(11) & Yes & 0 \\ \hline 
+\textbf{shop\_item\_id} & int(11) & Yes & NULL \\ \hline 
+equipped & int(1) & Yes & 0 \\ \hline 
+avatar\_id & int(11) & Yes & NULL \\ \hline 
+ \end{longtable}
+
+%
+% Structure: AVATAR_ITEM_SLOTS
+%
+ \begin{longtable}{|l|c|c|c|} 
+ \caption{Structure of table AVATAR\_ITEM\_SLOTS} \label{tab:AVATAR_ITEM_SLOTS-structure} \\
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} \\ \hline \hline
+\endfirsthead
+ \caption{Structure of table AVATAR\_ITEM\_SLOTS (continued)} \\ 
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} \\ \hline \hline \endhead \endfoot \textbf{\textit{id}} & int(11) & Yes & NULL \\ \hline 
+name & varchar(128) & Yes & NULL \\ \hline 
+equip\_limit & int(4) & Yes & NULL \\ \hline 
+x & double & Yes & NULL \\ \hline 
+y & double & Yes & NULL \\ \hline 
+ \end{longtable}
+
+%
+% Structure: CHILDREN
+%
+ \begin{longtable}{|l|c|c|c|} 
+ \caption{Structure of table CHILDREN} \label{tab:CHILDREN-structure} \\
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} \\ \hline \hline
+\endfirsthead
+ \caption{Structure of table CHILDREN (continued)} \\ 
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} \\ \hline \hline \endhead \endfoot \textbf{\textit{id}} & int(11) & Yes & NULL \\ \hline 
+name & varchar(100) & Yes & NULL \\ \hline 
+\textbf{pers\_num} & int(11) & Yes & NULL \\ \hline 
+\textbf{medical\_plan\_id} & int(11) & Yes & NULL \\ \hline 
+\textbf{avatar\_id} & int(11) & Yes & NULL \\ \hline 
+\textbf{child\_health\_state\_id} & int(11) & Yes & NULL \\ \hline 
+ \end{longtable}
+
+%
+% Structure: CHILDREN_LOG_DAYS
+%
+ \begin{longtable}{|l|c|c|c|} 
+ \caption{Structure of table CHILDREN\_LOG\_DAYS} \label{tab:CHILDREN_LOG_DAYS-structure} \\
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} \\ \hline \hline
+\endfirsthead
+ \caption{Structure of table CHILDREN\_LOG\_DAYS (continued)} \\ 
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} \\ \hline \hline \endhead \endfoot \textbf{\textit{date}} & date & Yes & NULL \\ \hline 
+\textbf{\textit{child\_id}} & int(11) & Yes & 0 \\ \hline 
+pollen\_state\_id & int(11) & Yes & NULL \\ \hline 
+ \end{longtable}
+
+%
+% Structure: CHILD_HEALTH_STATES
+%
+ \begin{longtable}{|l|c|c|c|} 
+ \caption{Structure of table CHILD\_HEALTH\_STATES} \label{tab:CHILD_HEALTH_STATES-structure} \\
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} \\ \hline \hline
+\endfirsthead
+ \caption{Structure of table CHILD\_HEALTH\_STATES (continued)} \\ 
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} \\ \hline \hline \endhead \endfoot \textbf{\textit{id}} & int(11) & Yes & NULL \\ \hline 
+health\_state\_id & int(11) & Yes & NULL \\ \hline 
+applies\_now & int(1) & Yes & NULL \\ \hline 
+ \end{longtable}
+
+%
+% Structure: DAY_MEDICINE_DOSES
+%
+ \begin{longtable}{|l|c|c|c|} 
+ \caption{Structure of table DAY\_MEDICINE\_DOSES} \label{tab:DAY_MEDICINE_DOSES-structure} \\
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} \\ \hline \hline
+\endfirsthead
+ \caption{Structure of table DAY\_MEDICINE\_DOSES (continued)} \\ 
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} \\ \hline \hline \endhead \endfoot \textbf{\textit{id}} & int(11) & Yes & NULL \\ \hline 
+prize & int(8) & Yes & NULL \\ \hline 
+planned & int(1) & Yes & NULL \\ \hline 
+taken & int(1) & Yes & NULL \\ \hline 
+time & datetime & Yes & NULL \\ \hline 
+day\_date & date & Yes & NULL \\ \hline 
+child\_id & int(11) & Yes & NULL \\ \hline 
+medicine\_id & int(11) & Yes & NULL \\ \hline 
+ \end{longtable}
+
+%
+% Structure: HEALTH_STATES
+%
+ \begin{longtable}{|l|c|c|c|} 
+ \caption{Structure of table HEALTH\_STATES} \label{tab:HEALTH_STATES-structure} \\
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} \\ \hline \hline
+\endfirsthead
+ \caption{Structure of table HEALTH\_STATES (continued)} \\ 
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} \\ \hline \hline \endhead \endfoot \textbf{\textit{id}} & int(11) & Yes & NULL \\ \hline 
+label & varchar(256) & Yes & NULL \\ \hline 
+ \end{longtable}
+
+%
+% Structure: MEDICAL_PLANS
+%
+ \begin{longtable}{|l|c|c|c|} 
+ \caption{Structure of table MEDICAL\_PLANS} \label{tab:MEDICAL_PLANS-structure} \\
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} \\ \hline \hline
+\endfirsthead
+ \caption{Structure of table MEDICAL\_PLANS (continued)} \\ 
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} \\ \hline \hline \endhead \endfoot \textbf{\textit{id}} & int(11) & Yes & NULL \\ \hline 
+label & varchar(256) & Yes & NULL \\ \hline 
+ \end{longtable}
+
+%
+% Structure: MEDICAL_PLAN_DOSES
+%
+ \begin{longtable}{|l|c|c|c|} 
+ \caption{Structure of table MEDICAL\_PLAN\_DOSES} \label{tab:MEDICAL_PLAN_DOSES-structure} \\
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} \\ \hline \hline
+\endfirsthead
+ \caption{Structure of table MEDICAL\_PLAN\_DOSES (continued)} \\ 
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} \\ \hline \hline \endhead \endfoot \textbf{\textit{id}} & int(11) & Yes & NULL \\ \hline 
+medical\_plan\_id & int(11) & Yes & NULL \\ \hline 
+health\_state\_id & int(11) & Yes & NULL \\ \hline 
+time & time & Yes & NULL \\ \hline 
+medicine\_id & int(11) & Yes & NULL \\ \hline 
+ \end{longtable}
+
+%
+% Structure: MEDICINES
+%
+ \begin{longtable}{|l|c|c|c|} 
+ \caption{Structure of table MEDICINES} \label{tab:MEDICINES-structure} \\
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} \\ \hline \hline
+\endfirsthead
+ \caption{Structure of table MEDICINES (continued)} \\ 
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} \\ \hline \hline \endhead \endfoot \textbf{\textit{id}} & int(11) & Yes & NULL \\ \hline 
+name & varchar(256) & Yes & NULL \\ \hline 
+instructions\_id & int(11) & Yes & NULL \\ \hline 
+ \end{longtable}
+
+%
+% Structure: POLLEN_STATES
+%
+ \begin{longtable}{|l|c|c|c|} 
+ \caption{Structure of table POLLEN\_STATES} \label{tab:POLLEN_STATES-structure} \\
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} \\ \hline \hline
+\endfirsthead
+ \caption{Structure of table POLLEN\_STATES (continued)} \\ 
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} \\ \hline \hline \endhead \endfoot \textbf{\textit{id}} & int(11) & Yes & NULL \\ \hline 
+label & varchar(256) & Yes & NULL \\ \hline 
+ \end{longtable}
+
+%
+% Structure: SHOP_ITEMS
+%
+ \begin{longtable}{|l|c|c|c|} 
+ \caption{Structure of table SHOP\_ITEMS} \label{tab:SHOP_ITEMS-structure} \\
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} \\ \hline \hline
+\endfirsthead
+ \caption{Structure of table SHOP\_ITEMS (continued)} \\ 
+ \hline \multicolumn{1}{|c|}{\textbf{Field}} & \multicolumn{1}{|c|}{\textbf{Type}} & \multicolumn{1}{|c|}{\textbf{Null}} & \multicolumn{1}{|c|}{\textbf{Default}} \\ \hline \hline \endhead \endfoot \textbf{\textit{id}} & int(11) & Yes & NULL \\ \hline 
+price & int(11) & Yes & 0 \\ \hline 
+slot\_id & int(11) & Yes & NULL \\ \hline 
+graphic & mediumblob & Yes & NULL \\ \hline 
+name & varchar(64) & Yes & NULL \\ \hline 
+description & varchar(256) & Yes & NULL \\ \hline 
+ \end{longtable}

@@ -1,0 +1,138 @@
+\section{Functional Requirements}
+\label{sec:functionalRequirements}
+As we are developing three separate applications, we found it best to consider
+the functional requirements separately. 
+We will use the abbreviations PFR (Parent Functional Requirement), 
+CFR (Child Functional Requirement) and KFR (Karotz Functional Requirement).
+
+\subsection{GAPP - Guardian Application}
+
+\subsubsection{PFR 1 - Medication plan}
+The application should make it easier for parents and responsible adults to keep
+track of the medication plan of their children.
+\\
+Priority: High
+
+\subsubsection{PFR 2 - Notifications}
+When a child needs to take a preventive medication, the application should
+send a notification to remind the parents or other responsible adults,
+either through the smartphone/tablet, through Email, or via Karotz.
+\\
+Priority: High
+
+\subsubsection{PFR 2.1 - Settings for notifications}
+The user should be able to choose settings for notifications. Example for
+settings to be made are: Time for notification, Notification appearance, and so
+on.
+\\
+Priority: Medium
+
+\subsubsection{PFR 2.2 - Notification to change condition}
+The user should get a weekly reminder to update the condition of the child, 
+if you're outside the default medicationplan.
+\\
+Priority: Medium
+
+\subsubsection{PFR 3 - Families}
+The application should support several children.
+\\
+Priority: Low
+
+\subsubsection{PFR 4 - Guidelines}
+The application should provide guidelines for how to use a medicine correctly,
+and how to do a treatment correctly.
+\\
+Priority: High
+
+\subsubsection{PFR 4.1 - Guidelines from NAAF}
+The application should provide support for changeable guidelines from NAAF in
+form of series of pictures, text or animations/movies.
+\\
+Priority: Medium
+
+\subsubsection{PFR 5 - Keep records of condition}
+The application should be able to keep track of the child's previous medical
+condition (in terms of days). The condition is to be set by a user, and varies
+from Green, Orange and Red zone as described in Appendix \ref{sec:trafficlight}.
+\\
+Priority: High
+
+\subsubsection{PFR 6 - Pollen forecast}
+The application should be able to use pollen forecasts to warn parents about
+possible bad days. The forecast should be included in the log.
+\\
+Priority: Medium
+
+\subsubsection{PFR 7 - Screen sizes}
+The application should have support for different screen-sizes.
+\\
+Priority: Low
+
+\subsection{CAPP - Children's Application}
+
+
+\subsubsection{CFR 1 - Distraction}
+The user should be able to choose a distraction during medication. This could be
+via an external application, a video or one of the Karotz in the household.
+\\
+Priority: High
+
+\subsubsection{CFR 2 - Rewards}
+When a child is done with a treatment, he/she should get a reward.
+\\
+Priority: High
+
+\subsubsection{CFR 2.1 - Rewards}
+The child should feel that the reward gives something back, for instance be able to buy something from
+an avatar-shop, etc. 
+\\
+Priority: Low
+
+
+\subsubsection{CFR 3 - Screen sizes}
+The application should have support for different screen-sizes.
+\\
+Priority: Low
+
+\subsubsection{CFR 4 - Avatar}
+The application should have an avatar for each child, that can be chosen by the child, and be
+customized through a shop, providing different clothes and items a child could collect. The shop should use the rewards as currency.
+\\
+Priority: Low
+
+\subsubsection{CFR 5 - Child friendly instructions}
+The application should give instructions to a child, that a child can easily comprehend. Both as part of the distraction, 
+and as a separate part of the application.  
+\\
+Priority: High
+
+\subsection{Karotz Application}
+
+\subsubsection{KFR1 - Notification}
+The application should make children aware of medication-time by playing sound,
+movement of ears and through the color of the Karotz. 
+\\
+Priority: High
+\subsubsection{KFR2 - Distraction}
+The application should be able to distract children when taking medication. This
+should be through movement of ears and ability to play some sound (music,
+book reading, etc.)
+\\
+Priority: High
+\subsubsection{KFR3 - Reward}
+The application should reward children by telling how many stars the child earned. The stars should be stored in the database and sync with the application.
+\\
+Priority: High
+\subsubsection{KFR4 - Register use of medicine}
+The application should allow the child to register when it is done taking the medicine, by
+holding a RFID-chip close to the karotz.
+\\
+Priority: Medium
+
+\subsubsection{KFR5 - Logging}
+The application should be able to save the health status to the database
+according to the child's health status.
+\\ 
+Priority: Medium
+
+

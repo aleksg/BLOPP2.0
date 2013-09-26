@@ -1,0 +1,744 @@
+Tables \ref{tab:unit5.1} through \ref{tab:unit5.15} describe the unit tests done in sprint 5. 
+
+\begin{table} %UNIT 5.1: add_child
+	\begin{center}
+		\begin{tabular}{|p{3.0cm}|p{14.0cm}|}
+			\hline
+			\bf{Item} & \bf{Description}\\
+			\hline
+			\bf{ID} & UNIT5.1\\
+			\bf{Description} & Test of the web access module \code{add\_child.php} \\
+			\bf{Date} & 30.10.12\\
+			\bf{Responsible} & Yngve\\
+			\bf{Subject} & \code{add\_child.php} and database \\
+			\bf{Precondition} & The database is up with the tables \code{MEDICAL\_PLANS}, \code{CHILDREN}and \code{HEALTH\_STATES}.\\
+			\bf{Steps} & 
+			    \begin{tabulenum}
+			        \item Initiate a REST client (POSTMAN) with the URL \url{http://folk.ntnu.no/yngvesva/blopp/add\_child.php}.
+			        \item Add the POST data
+			        \begin{tabulitem}
+			            \item \code{name}: testname
+			            \item \code{persnum}: 10101012345
+			            \item \code{states[]}: 1
+			            \item \code{states[]}: 2
+			        \end{tabulitem}
+			        \item Observe the returned JSON data
+			    \end{tabulenum}\\
+		    \hline
+			\bf{Results} & 
+				The JSON data returned was:
+\begin{lstlisting}[caption=JSON result from \code{add\_child.php}]
+{
+	post: {
+		name: "testnavn",
+		persnum: "10101012345",
+		states: [
+			"1",
+			"2"
+		]
+	},
+	q: "INSERT INTO `CHILDREN` (`id`, `name`, `pers_num`, `medical_plan_id`, `credits`) VALUES ('', 'testnavn', '10101012345', '0', '0')",
+	medical_plan_q: "INSERT INTO `MEDICAL_PLANS` (`id`, `label`) VALUES ('', 'testnavn')",
+	medical_plan_id: 0,
+	child_id: 12,
+	state_queries: [
+		"INSERT INTO `CHILD_HEALTH_STATES` (`child_id`, `health_state_id`, `applies_now`, `default`) VALUES ('12', '1', '1''1')",
+		"INSERT INTO `CHILD_HEALTH_STATES` (`child_id`, `health_state_id`, `applies_now`, `default`) VALUES ('12', '2', '0''0')"
+	],
+	all_state_ids: [
+		"1",
+		"2",
+		"3"
+	]
+}
+\end{lstlisting}
+				We can see from the JSON result that a child was added successfully, and it got the ID 10.
+				\\
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{Unit test 5.1, \code{add\_child.php}}
+	\label{tab:unit5.1}
+\end{table}
+
+\begin{table} %UNIT 5.2: add_plan_dose
+	\begin{center}
+		\begin{tabular}{|p{3.0cm}|p{14.0cm}|}
+			\hline
+			\bf{Item} & \bf{Description}\\
+			\hline
+			\bf{ID} & UNIT5.2\\
+			\bf{Description} & Test of the web access module \code{add\_plan\_dose.php}\\
+			\bf{Date} & 01.11.12\\
+			\bf{Responsible} & Yngve\\
+			\bf{Subject} & \code{add\_plan\_dose.php} and the database\\
+			\bf{Precondition} & The database is up with the tables \code{MEDICAL\_PLAN\_DOSES} and \code{CHILDREN}.\\
+			\bf{Steps} &
+			\begin{tabulenum}
+				\item Initiate a REST client (POSTMAN) with the url \url{http://folk.ntnu.no/yngvesva/blopp/add\_plan\_dose.php}.
+				\item Add the post data:
+					\begin{tabulitem}
+					  \item \code{child\_id}: 6
+					  \item \code{health\_state\_id}: 1
+					  \item \code{medicine\_id}: 1
+					  \item \code{time}: 12:34:56
+					\end{tabulitem}
+				\item Observe the returned JSON data.
+			\end{tabulenum}\\
+			\hline
+			\bf{Results} & The returned JSON data was:
+\begin{lstlisting}[caption=JSON result from \code{add\_plan\_dose.php}]
+{
+    "sqlsuccess": true,
+    "q": "INSERT INTO `MEDICAL_PLAN_DOSES` (`id`, `medical_plan_id`, `health_state_id`, `time`, `medicine_id`) SELECT '', C.medical_plan_id, '1', '12:34:56', '1' FROM `CHILDREN` AS C WHERE C.id='6'",
+    "child_id": "6",
+    "health_state_id": "1",
+    "medicine_id": "1",
+    "time": "12:34:56",
+    "id": 40
+}
+\end{lstlisting}
+				We see that a planned dose was added successfully by validating the queries and the parameter \code{sqlsuccess}, and checking the id 40.\\
+			\hline
+		\end{tabular}
+	\end{center}
+	\label{tab:unit5.2}
+	\caption{Unit test 5.2, \code{add\_plan\_dose.php}}
+\end{table}
+
+\begin{table} %UNIT 5.3: dose_is_taken
+	\begin{center}
+		\begin{tabular}{|p{3.0cm}|p{14.0cm}|}
+			\hline
+			\bf{Item} & \bf{Description}\\
+			\hline
+			\bf{ID} & UNIT5.3, \\
+			\bf{Description} & Test of the web access module \code{dose\_is\_taken.php}.\\
+			\bf{Date} & 01.11.12\\
+			\bf{Responsible} & Yngve\\
+			\bf{Subject} & The database and \code{dose\_is\_taken.php}.\\
+			\bf{Precondition} & The database is up with the table \code{DAY\_MEDICINE\_DOSES}.\\
+			\bf{Steps} &
+			\begin{tabulenum}
+				\item Initiate a web browser with the GET url \url{http://folk.ntnu.no/yngvesva/blopp/dose\_is\_taken.php?dose\_id=40}
+				\item Observe the returned JSON data.
+			\end{tabulenum}\\
+			\hline
+			\bf{Results} & The returned JSON data was:
+\begin{lstlisting}[caption=JSON result from \code{dose\_is\_taken.php}]
+{
+	sqlsuccess: true,
+	dose_id: "40",
+	day_date: "2012-11-01",
+	query: "SELECT `id` FROM `DAY_MEDICINE_DOSES` WHERE `medical_plan_dose_id`='40' AND `day_date`='2012-11-01' LIMIT 0,1",
+	result: false
+}
+\end{lstlisting}
+			We see from the result that the dose with id 40 (added in UNIT5.2, table 
+			\ref{tab:unit5.2}) has not been taken on the actual date, and by the query
+			and the \code{sqlsuccess} parameter, we see that the GET module works.\\
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{Unit test 5.3, \code{dose\_is\_taken.php}}
+	\label{tab:unit5.3}
+\end{table}
+
+\begin{table} %UNIT 5.4: get_available_child_states
+	\begin{center}
+		\begin{tabular}{|p{3.0cm}|p{14.0cm}|}
+			\hline
+			\bf{Item} & \bf{Description}\\
+			\hline
+			\bf{ID} & UNIT5.4\\
+			\bf{Description} & Test of the web access module \code{get\_available\_child\_states.php}.\\
+			\bf{Date} & 01.11.12\\
+			\bf{Responsible} & Yngve\\
+			\bf{Subject} & The database and \code{get\_available\_child\_states.php}.\\
+			\bf{Precondition} & A working database with the tables \code{HEALTH\_STATES} and \code{CHILD\_HEALTH\_STATES}.\\
+			\bf{Steps} &
+			\begin{tabulenum}
+				\item Initiate a web browser with the GET url \url{http://folk.ntnu.no/yngvesva/blopp/get\_available\_child\_states.php?child\_id=6}.
+				\item Observe the returned JSON data.
+			\end{tabulenum}\\
+			\hline
+			\bf{Results} & The returned JSON data was:
+\begin{lstlisting}[caption=JSON result from \code{get\_available\_child\_states.php}]
+{
+	sqlsuccess: true,
+	child_id: "6",
+	query: "SELECT id, label FROM `HEALTH_STATES` HS WHERE HS.id IN (SELECT health_state_id FROM `CHILD_HEALTH_STATES` CHS WHERE CHS.child_id=6) LIMIT 0,10",
+	rows: [
+		{
+			id: "1",
+			label: "GREEN"
+		},
+		{
+			id: "2",
+			label: "YELLOW"
+		},
+		{
+			id: "3",
+			label: "RED"
+		}
+	]
+}
+\end{lstlisting}
+			We see from the returned data that the child with $ID=6$ can have all states (\code{GREEN}, 
+			\code{YELLOW} and \code{RED}), and that the module works by checking \code{sqlsuccess} and \code{query}.\\
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{Unit test 5.4, \code{get\_available\_child\_states.php}}
+	\label{tab:unit5.4}
+\end{table}
+
+\begin{table} %UNIT 5.5: get_child
+	\begin{center}
+		\begin{tabular}{|p{3.0cm}|p{14.0cm}|}
+			\hline
+			\bf{Item} & \bf{Description}\\
+			\hline
+			\bf{ID} & UNIT5.5\\
+			\bf{Description} & Test of the web access module \code{get\_child.php}.\\
+			\bf{Date} & 01.11.12\\
+			\bf{Responsible} & Yngve\\
+			\bf{Subject} & The database and \code{get\_child.php}.\\
+			\bf{Precondition} & A working database with the table \code{CHILDREN}.\\
+			\bf{Steps} &
+			\begin{tabulenum}
+				\item Initiate a web browser with the GET url \url{http://folk.ntnu.no/yngvesva/blopp/get\_child.php?child\_id=6}.
+				\item Observe the returned JSON data.
+			\end{tabulenum}\\
+			\hline
+			\bf{Results} &
+			The returned JSON data was:
+\begin{lstlisting}[caption=JSON result from \code{get\_child.php}]
+{
+	sqlsuccess: true,
+	child_id: "6",
+	query: "SELECT * FROM `CHILDREN` WHERE id=6 LIMIT 0,1",
+	information: {
+		id: "6",
+		name: "Hermann",
+		pers_num: "1010354322",
+		medical_plan_id: "5",
+		avatar_id: "7",
+		credits: "45",
+		location_latitude: "0",
+		location_longitude: "0"
+	}
+}
+\end{lstlisting}
+			We see from the returned data that the child with $ID=6$ is named Hermann, some other information, and that the query works.
+			\\
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{Unit test 5.5, \code{get\_child.php}}
+	\label{tab:unit5.5}
+\end{table}
+
+\begin{table} %UNIT 5.6: get_child_state
+	\begin{center}
+		\begin{tabular}{|p{3.0cm}|p{14.0cm}|}
+			\hline
+			\bf{Item} & \bf{Description}\\
+			\hline
+			\bf{ID} & UNIT5.6\\
+			\bf{Description} & Test of the web access module \code{get\_child\_state.php}\\
+			\bf{Date} & 01.11.12\\
+			\bf{Responsible} & Yngve\\
+			\bf{Subject} & The database and \code{get\_child\_state.php}.\\
+			\bf{Precondition} & A working database with the tables \code{HEALTH\_STATES} and \code{CHILD\_HEALTH\_STATES}\\
+			\bf{Steps} &
+			\begin{tabulenum}
+				\item Initiate a web browser with the GET url \url{http://folk.ntnu.no/yngvesva/blopp/get\_child\_state.php?child\_id=6}.
+				\item Observe the returned JSON data.
+			\end{tabulenum}\\
+			\hline
+			\bf{Results} & The returned JSON data was:
+\begin{lstlisting}[caption=Returned JSON data from \code{get\_child\_state.php}]
+{
+	sqlsuccess: true,
+	child_id: "6",
+	query: "SELECT id, label FROM `HEALTH_STATES` HS WHERE HS.id IN (SELECT health_state_id FROM `CHILD_HEALTH_STATES` CHS WHERE CHS.child_id=6 AND CHS.applies_now=1) LIMIT 0,1",
+	state: {
+		id: "1",
+		label: "GREEN"
+	}
+}
+\end{lstlisting}
+			We see from the returned data that the child with $ID=6$ is in the green state, and that the module works.\\
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{Unit test 5.6, \code{get\_child\_state.php}}
+	\label{tab:unit5.6}
+\end{table}
+
+\begin{table} %UNIT 5.7: get_doses_for_current_state
+	\begin{center}
+		\begin{tabular}{|p{3.0cm}|p{14.0cm}|}
+			\hline
+			\bf{Item} & \bf{Description}\\
+			\hline
+			\bf{ID} & UNIT5.7\\
+			\bf{Description} & Test of the web access module \code{get\_doses\_for\_current\_state.php}.\\
+			\bf{Date} & 01.11.12\\
+			\bf{Responsible} & Yngve\\
+			\bf{Subject} & The database and \code{get\_doses\_for\_current\_state.php}\\
+			\bf{Precondition} & A working database with the tables \code{MEDICAL\_PLAN\_DOSES}, \code{DAY\_MEDICINE\_DOSES} and \code{CHILD\_HEALTH\_STATES}.\\
+			\bf{Steps} &
+			\begin{tabulenum}
+				\item Initiate a web browser with the GET url \url{http://folk.ntnu.no/yngvesva/blopp/get\_doses\_for\_current\_state.php?child\_id=6}.
+				\item Observe the returned JSON data.
+			\end{tabulenum}\\
+			\hline
+			\bf{Results} & The returned JSON data was:
+\begin{lstlisting}[caption=Returned JSON data for \code{get\_doses\_for\_current\_state.php}]
+{
+	sqlsuccess: true,
+	child_id: "6",
+	query: "SELECT Mpd.id, Mpd.medical_plan_id, Mpd.health_state_id, Mpd.time, Mpd.medicine_id, M.color AS 'medicine_color', M.name AS 'medicine_name' FROM `MEDICAL_PLAN_DOSES` AS Mpd, `MEDICINES` AS M WHERE Mpd.medical_plan_id IN (SELECT C.medical_plan_id FROM `CHILDREN` AS C WHERE C.id=6) AND Mpd.id NOT IN (SELECT DMD.medical_plan_dose_id FROM `DAY_MEDICINE_DOSES` AS DMD WHERE DMD.medical_plan_dose_id=Mpd.id AND DMD.day_date='2012-11-04') AND Mpd.medicine_id = M.id AND Mpd.health_state_id IN (SELECT HS.health_state_id FROM `CHILD_HEALTH_STATES` AS HS WHERE HS.child_id=6 AND HS.applies_now='1') LIMIT 0,100",
+	rows: [
+		{
+			id: "41",
+			medical_plan_id: "5",
+			health_state_id: "1",
+			time: "01:09:00",
+			medicine_id: "1",
+			medicine_color: "BLUE",
+			medicine_name: "Flutide"
+		}
+	]
+}
+\end{lstlisting}
+			From the returned data we see that the child with $ID=6$ has yet to take Flutide today, which 
+			should be taken at 01:09:00. We can also validate the SQL query, and see that $sqlsuccess=true$,
+			which means that the module works.\\
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{Unit test 5.7, \code{get\_doses\_for\_current\_state.php}}
+	\label{tab:unit5.7}
+\end{table}
+
+\begin{table} %UNIT 5.8: get_instructions
+	\begin{center}
+		\begin{tabular}{|p{3.0cm}|p{14.0cm}|}
+			\hline
+			\bf{Item} & \bf{Description}\\
+			\hline
+			\bf{ID} & UNIT5.8\\
+			\bf{Description} & Test of the web access module \code{get\_instructions.php}.\\
+			\bf{Date} & 01.11.12\\
+			\bf{Responsible} & Yngve\\
+			\bf{Subject} & The database and \code{get\_instructions.php}.\\
+			\bf{Precondition} & A working database with the table \code{MEDICINE\_INSTRUCTIONS}.\\
+			\bf{Steps} &
+			\begin{tabulenum}
+				\item Initialize a web browser with the GET url \url{http://folk.ntnu.no/yngvesva/blopp/get\_instructions.php?medicine\_id=1}.
+				\item Observe the returned JSON data.
+			\end{tabulenum}\\
+			\hline
+			\bf{Results} & The returned JSON data was: 
+\begin{lstlisting}[caption=Returned JSON from \code{get\_instructions.php}]
+{
+	sqlsuccess: true,
+	child_id: "1",
+	query: "SELECT * FROM `MEDICINE_INSTRUCTIONS` WHERE id IN (SELECT instructions_id FROM `MEDICINES` WHERE `id`='1') LIMIT 0,1",
+	instructions: {
+		id: "1",
+		url: "medicine_flutide_50microg.jpg",
+		information: "Et inhalasjonssteroid som brukes fast slik legen har bestemt. Effekten ses forst etter noen dagers bruk, og gjor at betennelsesreaksjonen i lungene til barnet demper seg. Dette hindrer barnets astma/betennelsesreaksjon i a utvikle seg og hindrer utvikling av sykdommen.",
+		effect: "Alle sprayinhalasjoner ma gis pa inhalasjonskammer (Aerochamber, Optichamber, Babyhaler eller lignende) for a sikre at barnet far pustet inn medisinen pa riktig mate. Etter inhalasjon med steroider ma barnet alltid skylle munn, drikke eller pusse tenner for a fjerne rester av pulver fra munnen. Blir restene igjen i munnen kan det oppsta en smertefull soppinfeksjon i munnen."
+	}
+}
+\end{lstlisting}
+			We see from the JSON data that the module works by checking the query 
+			and the variable \code{sqlsuccess}. We get the information that the medicine 
+			with $ID=1$ has three types of instructions: an image given by an URI, 
+			a general information field and a field to explain the effects.\\
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{Unit test 5.8, \code{get\_instructions.php}}
+	\label{tab:unit5.8}
+\end{table}
+
+\begin{table} %UNIT 5.9: get_log_days_for_child
+	\begin{center}
+		\begin{tabular}{|p{3.0cm}|p{14.1cm}|}
+			\hline
+			\bf{Item} & \bf{Description}\\
+			\hline
+			\bf{ID} & UNIT5.9\\
+			\bf{Description} & Test of the web access module \code{get\_log\_days\_for\_child.php}.\\
+			\bf{Date} & 03.11.12\\
+			\bf{Responsible} & Yngve\\
+			\bf{Subject} & The database and \code{get\_log\_days\_for\_child.php}\\
+			\bf{Precondition} & A working database with the tables \code{DAY\_MEDICINE\_DOSES} and \code{CHILDREN\_LOG\_DAYS}.\\
+			\bf{Steps} &
+			\begin{tabulenum}
+				\item Initialize a web browser with the GET url \url{http://folk.ntnu.no/yngvesva/blopp/get\_log\_days\_for\_child.php?child\_id=6}
+				\item Observe the resulting JSON data.
+			\end{tabulenum}\\
+			\hline
+			\bf{Results} & The returned JSON data was:
+\begin{lstlisting}[caption=Returned JSON data for \code{get\_log\_days\_for\_child.php}]
+{
+    sqlsuccess: true,
+    child_id: "6",
+    year: "2012",
+    month: "11",
+    query: "SELECT * FROM `DAY_MEDICINE_DOSES` WHERE `child_id`='6' AND YEAR(`day_date`)='2012' AND MONTH(`day_date`)='11' LIMIT 0,100",
+    statuses_query: "SELECT `date`, `child_id`, `health_state_id` FROM `CHILDREN_LOG_DAYS` WHERE `child_id`='6' ORDER BY `date` ASC",
+    days: [{
+        date: "2012-11-01",
+        health_state_id: "1",
+        doses: []
+    }, {
+        date: "2012-11-02",
+        health_state_id: "1",
+        doses: [{
+            id: "126",
+            reward: "1",
+            time: "00:00:01",
+            day_date: "2012-11-02",
+            child_id: "6",
+            medicine_id: "1",
+            health_state_id: "1",
+            medical_plan_dose_id: "0",
+            pollen_state_id: "0"
+        }]
+    }, {
+        date: "2012-11-03",
+        health_state_id: "3",
+        doses: []
+    }]
+}
+\end{lstlisting}
+			As we see from the returned data, the child with $ID=6$ has one registered dose 
+			in november, and the date was the third. We also see that the health state was
+			changed to $health\_state\_id=3$ on the third. It is clear that the module is
+			working because of the returned data, validating the queries and the variable
+			\code{sqlsuccess}. 
+			\\
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{Unit test 5.9, \code{get\_log\_days\_for\_child.php}}
+	\label{tab:unit5.9}
+\end{table}
+
+\begin{table} %UNIT 5.10: get_log_for_child
+	\begin{center}
+		\begin{tabular}{|p{3.0cm}|p{14.0cm}|}
+			\hline
+			\bf{Item} & \bf{Description}\\
+			\hline
+			\bf{ID} & UNIT5.10\\
+			\bf{Description} & Test of the web access module \code{get\_log\_for\_child.php}.\\
+			\bf{Date} & 03.11.12\\
+			\bf{Responsible} & Yngve\\
+			\bf{Subject} & The database and \code{get\_log\_for\_child.php}.\\
+			\bf{Precondition} & A working database with the table \code{DAY\_MEDICINE\_DOSES}.\\
+			\bf{Steps} &
+			\begin{tabulenum}
+				\item Initialize a web browser with the GET url \url{http://folk.ntnu.no/yngvesva/blopp/get\_log\_for\_child.php?child\_id=6}.
+				\item Observe the returned JSON data.
+			\end{tabulenum}\\
+			\hline
+			\bf{Results} & The resulting JSON data was:
+\begin{lstlisting}[caption=Returned JSON data from \code{get\_log\_for\_child.php}]
+{
+    sqlsuccess: true,
+    child_id: "6",
+    year: "2012",
+    month: "11",
+    query: "SELECT * FROM `DAY_MEDICINE_DOSES` WHERE `child_id`=6 AND YEAR(`day_date`)=2012 AND MONTH(`day_date`)=11 LIMIT 0,100",
+    days: [
+        {
+            id: "126",
+            reward: "1",
+            time: "00:00:01",
+            day_date: "2012-11-02",
+            child_id: "6",
+            medicine_id: "1",
+            health_state_id: "1",
+            medical_plan_dose_id: "0",
+            pollen_state_id: "0"
+        }
+    ]
+}
+\end{lstlisting}
+			We see from the returned data that there was one logged medication
+			and that the module works from checking the query and the variable
+			\code{sqlsuccess}.
+			\\
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{Unit test 5.10, \code{get\_log\_for\_child.php}}
+	\label{tab:unit5.10}
+\end{table}
+
+\begin{table} %UNIT 5.11: get_plan
+	\begin{center}
+		\begin{tabular}{|p{3.0cm}|p{14.0cm}|}
+			\hline
+			\bf{Item} & \bf{Description}\\
+			\hline
+			\bf{ID} & UNIT5.11\\
+			\bf{Description} & Test of the web access module \code{get\_plan.php}.\\
+			\bf{Date} & 04.11.12\\
+			\bf{Responsible} & Yngve\\
+			\bf{Subject} & The database and \code{get\_plan.php}.\\
+			\bf{Precondition} & A working database with the tables \code{MEDICAL\_PLAN\_DOSES} and \code{CHILDREN}.\\
+			\bf{Steps} &
+			\begin{tabulenum}
+				\item Initialize a web browser with the GET url \url{http://folk.ntnu.no/yngvesva/blopp/get\_plan.php?child\_id=6}.
+				\item Observe the returned JSON data.
+			\end{tabulenum}\\
+			\hline
+			\bf{Results} & The returned JSON data was:
+\begin{lstlisting}[caption=Returned JSON data for \code{get\_plan.php}]
+{
+	sqlsuccess: true,
+	child_id: "6",
+	query: "SELECT Mpd.id, Mpd.medical_plan_id, Mpd.health_state_id, Mpd.time, Mpd.medicine_id, M.color AS 'medicine_color', M.name AS 'medicine_name' FROM `MEDICAL_PLAN_DOSES` AS Mpd, `MEDICINES` AS M WHERE Mpd.medical_plan_id IN (SELECT medical_plan_id FROM `CHILDREN` C WHERE C.id=6) AND Mpd.medicine_id = M.id LIMIT 0,100",
+	rows: [
+		{
+			id: "41",
+			medical_plan_id: "5",
+			health_state_id: "1",
+			time: "01:09:00",
+			medicine_id: "1",
+			medicine_color: "BLUE",
+			medicine_name: "Flutide"
+		}
+	]
+}
+\end{lstlisting}
+			We see from the returned data that there is one medication of
+			Flutide planned at 01:09:00. We conclude that the module is
+			working from looking at the query and checking the variable
+			\code{sqlsuccess}.
+			\\
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{Unit test 5.11, $get\_plan.php$}
+	\label{tab:unit5.11}
+\end{table}
+
+\begin{table} %UNIT 5.12: register_medicine_taken
+	\begin{center}
+		\begin{tabular}{|p{3.0cm}|p{14.0cm}|}
+			\hline
+			\bf{Item} & \bf{Description}\\
+			\hline
+			\bf{ID} & UNIT5.12\\
+			\bf{Description} & Test of the web access module \code{register\_medicine\_taken.php}.\\
+			\bf{Date} & 04.11.12\\
+			\bf{Responsible} & Yngve\\
+			\bf{Subject} & The database and \code{register\_medicine\_taken.php}.\\
+			\bf{Precondition} & A working database with the tables \code{DAY\_MEDICINE\_DOSES}, \code{HEALTH\_STATES} and \code{CHILDREN}.\\
+			\bf{Steps} &
+			\begin{tabulenum}
+				\item Initialize a REST client with the URL \url{http://folk.ntnu.no/yngvesva/blopp/register\_medicine\_taken.php}.
+				\item Add the POST parameters:
+					\begin{tabulitem}
+					  \item \code{child\_id}: 6
+					  \item \code{medicine\_id}: 1
+					  \item \code{day\_date}: 2012-09-03
+					  \item \code{health\_state\_id}: 2
+					\end{tabulitem}
+				\item Observe the returned JSON data.
+			\end{tabulenum}\\
+			\hline
+			\bf{Results} & The returned JSON data was:
+\begin{lstlisting}[caption=Returned JSON data from \code{register\_medicine\_taken.php}]
+{
+    "sqlsuccess": true,
+    "post": {
+        "child_id": "6",
+        "medicine_id": "1",
+        "day_date": "2012-09-30",
+        "health_state_id": "2"
+    },
+    "q": "INSERT INTO `DAY_MEDICINE_DOSES` (`id`, `reward`, `time`, `day_date`, `child_id`, `medicine_id`, `health_state_id`, `medical_plan_dose_id`, `pollen_state_id`) VALUES ('', '2', '00:00:01', '2012-09-30', '6', '1', '2', '', '')",
+    "reward": "2",
+    "unique": true
+}
+\end{lstlisting}
+			We see from the returned data, by looking at \code{query} and \code{sqlsuccess},
+			that an entry was added to the log. It was given a default time of
+			00:00:01 since we did not specify it, and the returned calculated
+			reward was 2. We can conclude that the dose was registered
+			successfully and the module works.
+			\\
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{Unit test 5.12, \code{register\_medicine\_taken.php}}
+	\label{tab:unit5.12}
+\end{table}
+
+\begin{table} %UNIT 5.13: remove\_plan\_dose.php
+	\begin{center}
+		\begin{tabular}{|p{3.0cm}|p{14.0cm}|}
+			\hline
+			\bf{Item} & \bf{Description}\\
+			\hline
+			\bf{ID} & UNIT5.13\\
+			\bf{Description} & Test of the web access module \code{remove\_plan\_dose.php}.\\
+			\bf{Date} & 04.11.12\\
+			\bf{Responsible} & Yngve\\
+			\bf{Subject} & The database and \code{remove\_plan\_dose.php}.\\
+			\bf{Precondition} & A working database with the table \code{MEDICAL\_PLAN\_DOSES}.\\
+			\bf{Steps} &
+			\begin{tabulenum}
+				\item Initialize a REST client (POSTMAN) with the URL \url{http://folk.ntnu.no/yngvesva/blopp/remove\_plan\_dose.php}.
+				\item Add the POST parameter:
+					\begin{tabulitem}
+					  \item $id$: 41
+					\end{tabulitem}
+				\item Observe the returned JSON data.
+			\end{tabulenum}\\
+			\hline
+			\bf{Results} & The returned JSON data was:
+\begin{lstlisting}[caption=Returned JSON data from \code{remove\_plan\_dose.php}]
+{
+    "sqlsuccess": true,
+    "q": "DELETE FROM `MEDICAL_PLAN_DOSES` WHERE id='41'",
+    "id": "41",
+    "num_deleted": 1
+}
+\end{lstlisting}
+			We conclude from the query, \code{sqlsuccess} and \code{num\_deleted} that
+			the row with $ID=41$ was deleted and that the module works.
+			\\
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{Unit test 5.13, \code{remove\_plan\_dose.php}}
+	\label{tab:unit5.13}
+\end{table}
+
+\begin{table} %UNIT 5.14: remove_plan_medicine_at_time
+	\begin{center}
+		\begin{tabular}{|p{3.0cm}|p{14.0cm}|}
+			\hline
+			\bf{Item} & \bf{Description}\\
+			\hline
+			\bf{ID} & UNIT5.14\\
+			\bf{Description} & Test of the web access module \code{remove\_plan\_medicine\_at\_time.php}.\\
+			\bf{Date} & 04.11.12\\
+			\bf{Responsible} & Yngve\\
+			\bf{Subject} & The database and \code{remove\_plan\_medicine\_at\_time.php}\\
+			\bf{Precondition} & A working database \\
+			\bf{Steps} &
+			\begin{tabulenum}
+				\item Initiate a REST client (POSTMAN) with the URL \url{http://folk.ntnu.no/yngvesva/blopp/remove\_plan\_medicine\_at\_time.php}.
+				\item Add the POST parameters:
+					\begin{tabulitem}
+					  \item \code{time}: 12:34:56
+					  \item \code{medicine\_id}: 1
+					  \item \code{child\_id}: 6
+					  \item \code{health\_state\_id}: 3
+					\end{tabulitem}
+				\item Observe the returned JSON data.
+			\end{tabulenum}\\
+			\hline
+			\bf{Results} & The returned data is:
+\begin{lstlisting}[caption=Returned JSON data from \code{remove\_plan\_medicine\_at\_time.php}]
+{
+    "sqlsuccess": true,
+    "q": "INSERT INTO `MEDICAL_PLAN_DOSES` (`id`, `medical_plan_id`, `health_state_id`, `time`, `medicine_id`) SELECT '', C.medical_plan_id, '3', '12:34:56', '1' FROM `CHILDREN` AS C WHERE C.id='6'",
+    "child_id": "6",
+    "health_state_id": "3",
+    "medicine_id": "1",
+    "time": "12:34:56",
+    "id": 44
+}
+\end{lstlisting}
+			We see from the data that a medication dose was removed, and
+			by the query and \code{sqlsuccess} we see that the module works.
+			\\
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{Unit test 5.14, \code{remove\_plan\_medicine\_at\_time.php}}
+	\label{tab:unit5.14}
+\end{table}
+
+\begin{table} %UNIT 5.15, set_child_state
+	\begin{center}
+		\begin{tabular}{|p{3.0cm}|p{14.0cm}|}
+			\hline
+			\bf{Item} & \bf{Description}\\
+			\hline
+			\bf{ID} & UNIT5.15\\
+			\bf{Description} & Test of the web access module \code{set\_child\_state.php}.\\
+			\bf{Date} & 05.11.12\\
+			\bf{Responsible} & Yngve\\
+			\bf{Subject} & The database and \code{set\_child\_state.php}.\\
+			\bf{Precondition} & A working database with the tables \code{CHILD\_HEALTH\_STATES} and \code{CHILDREN\_LOG\_DAYS}.\\
+			\bf{Steps} &
+			\begin{tabulenum}
+				\item Initialize a REST client (POSTMAN) with the URL \url{http://folk.ntnu.no/yngvesva/bopp/set\_child\_state.php}.
+				\item Add the POST parameters:
+					\begin{tabulitem}
+					  \item \code{child\_id}: 6
+					  \item \code{state\_id}: 2
+					\end{tabulitem}
+				\item Observe the returned JSON data.
+			\end{tabulenum}\\
+			\hline
+			\bf{Results} & The returned JSON data was:
+\begin{lstlisting}[caption=Returned JSON from \code{set\_child\_state.php}]
+{
+    "sqlsuccess": true,
+    "child_id": "6",
+    "state_id": "2",
+    "update_query": "UPDATE `CHILD_HEALTH_STATES` SET applies_now = IF(health_state_id = '2', 1, 0) WHERE child_id='6'",
+    "insert_query": "REPLACE INTO `CHILDREN_LOG_DAYS` (`date`, `child_id`, `pollen_state_id`, `health_state_id`)  VALUES ('2012-11-05', '6', '1', '2')"
+}
+\end{lstlisting}
+			We see from the returned JSON data that two tables were updated: the child's current
+			state, and the log of state changes. We conclude that the module works because of
+			the queries and the variable \code{sqlsuccess}.
+			\\
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{Unit test 5.15, \code{set\_child\_state.php}}
+	\label{tab:unit5.15}
+\end{table}
+
+%\begin{table}
+%	\begin{center}
+%		\begin{tabular}{|p{3.0cm}|p{14.0cm}|}
+%			\hline
+%			\bf{Item} & \bf{Description}\\
+%			\hline
+%			\bf{ID} & \\
+%			\bf{Description} & \\
+%			\bf{Date} & \\
+%			\bf{Responsible} & \\
+%			\bf{Subject} & \\
+%			\bf{Precondition} & \\
+%			\bf{Steps} &
+%			\begin{tabulenum}
+%				\item ~
+%			\end{tabulenum}\\
+%			\hline
+%			\bf{Results} & \\
+%			\hline
+%		\end{tabular}
+%	\end{center}
+%	\caption{Unit test X.Y, Z}
+%	\label{tab:unitX.Y}
+%\end{table}

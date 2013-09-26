@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="calendar_array">
+        <item>Pollen</item>
+        <item>Medisiner</item>
+    </string-array>
+    <string-array name="pollen_name">
+        <item>Or</item>
+        <item>Bjørk</item>
+        <item>Gress</item>
+    </string-array>
+    <string-array name = "pollen_class">
+        <item>Moderat</item>
+        <item>Moderat</item>
+        <item>Sterk</item>
+    </string-array>
+</resources>

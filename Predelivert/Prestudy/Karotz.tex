@@ -1,0 +1,55 @@
+\section{Karotz}
+The Karotz is a robot shaped as a bunny that can interact with
+a user through light, ear movement and sound. It can also take
+input through a button, moving its ears, an RFID chip, voice
+commands and serial (internet) communication.
+
+The project includes developing an application for the Karotz
+platform that will serve as an addition to the mobile applications.
+It is therefore necessary to study its interfaces, development
+methods and API of the machine.
+
+\subsection{The Application Platform}
+Karotz application (called ``Appz'') are installed through an
+online platform located on the Karotz web site. They can be
+launched on the Karotz itself either through a scheduler, voice
+commands or an RFID chip. 
+
+As for launching the BLOPP app, the times for the scheduler must
+be manually set through the Karotz web site, so it cannot be 
+used for notifications directly. The best option for the BLOPP 
+implementation would thererfore be to set a scheduler to start
+every day at 00:00 and stop every day at 23:59. This way it can
+be ensured that the application is always running, updating
+itself with medications, status and times, and a timer can be
+used to schedule notifications.
+
+\subsection{The two APIs}
+The Karotz can be programmed in two different ways: either
+through a web REST framework, with JavaScript that runs as an
+embedded program on the robot itself.
+
+The requirement that a REST program would have to be hosted
+somewhere, combined with the fact that an embedded program 
+provides more flexibility in terms of local storage to limit the
+amount of information sent over a network makes the JavaScript
+framework a more suitable choice for the BLOPP project.
+
+\subsection{Karotz Output Channels}
+The Karotz has a few ways of providing output to an end-user. It
+can be asked to
+\begin{itemize}
+    \item play sound files;
+    \item move its ears;
+    \item speak through a TTS (text-to-speach) engine;
+    \item illuminate its stomach with different colors;
+    and
+    \item communicate through the internet with HTTP GET and POST 
+          methods.
+\end{itemize}
+
+For providing user commands, TTS could be an option if the engine
+supported Norwegian, but since the language options are limited to
+English, French, German and Spanish, speech will have to be
+created by recording sound files and playing them with the
+multimedia engine.

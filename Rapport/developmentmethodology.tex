@@ -1,0 +1,58 @@
+\chapter{Development Methology}
+This section contains descriptions regarding the different development
+methodolo- gies that have been brought up and that have been researched. Each subsection
+includes both a short explanation, advantages and drawbacks for each methodol-
+ogy.
+
+\subsection{The Waterfall Method}
+Figure x.x shows a graphical explanation of the sequential design process called the waterfall method. This method has been around for decades. The waterfall method is based on the idea of visiting each of the phases, Initiation, Analysis, Design, Construction, Testing, Implementation and Maintenance, only once and finish one before starting the next. The name is given from the idea of progress flowing through each face, like a waterfall. This results in huge challenges regarding controlling dependencies if the project doeas reiteration over previous phases at a later stage.
+
+The main advantage to the waterfall method is that bugs and changes are cheaper to fix if you fix them right away, as it will save you a lot of time/money later on.
+The main drawbacks are as mentioned earlier, that once the project has moved on to the next phase and the team should not backtrack and edit the previously completed phases, since this might make the further implementation more difficult. The fact that planning has to be done very thoroughly in the beginning to avoid having to reiterate previous phases at a later stage as this can be costly and completed, is also a disadvantage. Leading to a problem with projects where there is no overview to what is to be done and how long time it will take, this method will lead to uncertainty. A roll back to an earlier stage will most likely prove early estimates wrong and might cause complications to the development.
+
+\subsection{Scrum}
+Figure x.x shows a graphical explanation of the Scrum method, one of many agile development methods. Agile development meaning that it is an iterative, incremental model which emphasizes on doing several short sprints where the goal is to complete some smaller set of tasks. After a given period, usually one to four weeks, the development team summarizes what have been done and what is left from the current sprint, needing to be completed in the upcoming sprints.
+The advantages of scrum are that it makes the software development more versatile, the team can work on all phases and parts of the project at the same time, and update earlier assumptions based on newer discoveries. Meaning that requirements and modelling does need to be finished before starting implementation and because of this, changes are less expensive to do. This is done by having a more relaxed relationship to documentation of source code and the process.
+Nothing is written in stone until the product is done, as opposed to the waterfall method, mentioned earlier.
+The main drawback of Scrum is the complexity of it. All methods has a certain learning curve at the beginning, leading to stress or less effective work. Scrum has several submethods, all with small differences. This may lead to a learning curve for experienced users.
+A more specific explanation of how this project used Scrum is found in Section x.x
+
+\subsection{Choice of methodology}
+The development chose the Scrum methodology instead of the Waterfall method, due to many reasons. Foremost, the customer asked the team to work in the Scrum methodology. "We want the process to be as agile as possible, to a certain level. Waterfall will not suffice". The customer had many ideas regarding the layout and the functionality of the applications, and were not sure what to include. This leading to a situation where spending time making a detailed requirement specification and locking down all the details was pointless.
+The customer was likely to make changes to the initial requirements once the first plan was ready. Secondly, the team was way more eager to try out scrum than to use waterfall. The simple fact that scrum is highly recommended by real-life developers, is a good argument for doing so. The developers were also eager to learn more about Scrum, as not all had used it before.
+
+
+\subsection{Frameworks used in the Project}
+In this section the different frameworks that have been in use in the project is presented.
+The frameworks consists mainly of the development model, the different programming languages, the database and server tools, the Karotz API, the Android SDK and the IDE used for development.
+
+\subsection{Software Development Model}
+
+
+\subsection{Programming Languages, Message Formats and File Formats}
+The following section will comment on different programming languages, communication protocols and file formats used in the project.
+
+\subsubsection{JavaScript}
+Two parts of the project will make use of JavaScript. The settings page for doctors is web based and will use JavaScript for interactivity. The Karotz can be programmed in two ways; either through a web API on the server side or through stored JavaScript code. In order to maximize stability and power, the client hosted JavaScript technique will be used.
+
+JavaScript is a multi-paradigm, weakly typed and dynamic language that is extensively used on the web today. The main application of JavaScript is to enhance interactivity on a web page through client-side interpretation of the code in a browser. It can be used for a number of purposes such as making something happen when a button is pressed, loading new data without refreshing the page and much more. Even though JavaScript is by far most commonly used on the web there are also applications of it in other areas. Examples of these kinds of implementations are Node.js\footnote{\emph{Node.js} is a network application creation platform for writing JavaScript code as a reguar server-side program. Read more about Node.js at \href{http://nodejs.org/}{http://nodejs.org/}} and the Karotz API which we will be using.
+
+\subsubsection{MySQL}
+A central database is integral to the finished program. It will be realized using the SQL implementation MySQL. SQL stands for Simple Query Language and is a programming language used specifically for databases. MySQL is the most popular open source database\cite{mysqlmarketshare}. One of the reasons why MySQL is a good choice for this project is that most programming languages have standard libraries for accessing a MySQL database. It is also renowned for its ease of use, and all the team members have some experience with it.
+
+\section{Extra Tools used in the Project}
+
+
+\subsection{Task Management, Collaboration and Communication Tools}
+The following section contains a description of the tools used for project and task management, team and customer collaboration and communication between participants. The tools chosen were chosen due to familiarity, making the learning curve as flat as possible. 
+For file sharing between customer and the developer team, and the developer team between each other, we used Dropbox. Dropbox is an only storage which allows sharing off folders and documents between invited partners. Dropbox is asynchronous, meaning only one person may correct a document at a time.
+To ensure that every team member was always up to date and no documentation was lost, version control systems were enforced. This way the information we made sure that an online backup existed, in case of errors occuring. Git was used as a tool for version control. 
+
+\subsection{Mockup Tool}
+For mockups the team chose Balsamiq Mockups\footnote{\emph{Balsamiq Mockups} is a GUI development tool. Read more about it on the official website: \href{http://www.balsamiq.com/products/mockups}{http://www.balsamiq.com/products/mockups}}. 
+Balsamic Mockups is a tool designed for easing the collaboration between the GUI developers and the customer. The main advantage to Balsamiq Mockups is the way it ensures no one is too attached to the design.
+By making sketchy, low-fidelity frames it moves the focus of design conversations towards functionality. Balsamiq also has functionality for making click-through prototypes, which are wery nice for demonstration purposes and usability testing.
+The team was also adviced by the customer and the advisor to use Balsamiq Mockups.
+
+\section{Standards}
+Write something useful about Android design standards.

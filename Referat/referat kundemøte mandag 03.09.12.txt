@@ -1,0 +1,26 @@
+Møtereferat 03.09.12 (workshop/kundemøte)
+
+Attending: Aleks, Eirik, Ole, Hanne, Marikken, Elin
+
+The main item discussed during this meeting was the general layout of the
+product, in preparation for performing an early usability test later in the
+day. After we last week presented our ideas for the application, we got the
+following feedback and revisions during this meeting:
+
+-	The customer wanted the application to be split into two applications,
+	one for the parents containing the settings, manual/instructions, the
+	logging and changing medicationplan. The other part would be for the 
+	child, where you can enter a shop/reward system, activate distractions
+	and see how to correctly apply medicine.
+
+-	The two applications will be connected through an underlying system keeping
+	the database and both clientapplications consistent.
+
+-	There were minor changes to our gui, mainly around the parentapplication,
+	which they thought were to complicated.
+
+-	They wanted more focus on getting the karotz operational and working it into
+	the reminding/distraction part.
+
+-	The customer also made it clear that the reminder and distraction parts
+	would likely get priority when we start our sprints.
