@@ -3,6 +3,8 @@ package no.blopp.app.jsonposters;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.util.Log;
+
 /**
  * Used to remove a medicine from a plan. Handles the database.
  * @author aarseth_90
@@ -17,7 +19,6 @@ public class DeleteMedicineFromPlanPoster extends DatabasePoster {
 	 */
 	public DeleteMedicineFromPlanPoster(String params) {
 		super(params, PHP_STRING);
-		// TODO Auto-generated constructor stub
 	}
 
 	public void initializeDataFromJSON(String result) {
@@ -26,10 +27,11 @@ public class DeleteMedicineFromPlanPoster extends DatabasePoster {
 			data = new JSONObject(result);
 			success = data.getBoolean("sqlsuccess");
 		} catch (JSONException e) {
-			// TODO Auto-generated catch block
+			
+			//TODO: Handle appropriately??
+			Log.d(DeleteMedicineFromPlanPoster.class.getSimpleName(), "An exception while handling json has occured");
 			e.printStackTrace();
 		}
-
 	}
 	public boolean isSuccess()
 	{

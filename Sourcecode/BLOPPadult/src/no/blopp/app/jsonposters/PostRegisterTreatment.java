@@ -7,8 +7,6 @@ import no.blopp.app.models.JsonModels.RegisterTreatmentResult;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.util.Log;
-
 
 public class PostRegisterTreatment extends DatabasePoster
 {

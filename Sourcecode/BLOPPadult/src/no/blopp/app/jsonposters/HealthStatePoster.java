@@ -16,7 +16,6 @@ public class HealthStatePoster extends DatabasePoster
 	public HealthStatePoster(String params)
 	{
 		super(params, phpPage);
-		// TODO Auto-generated constructor stub
 	}
 
 	public void initializeDataFromJSON(String result)
@@ -35,7 +34,6 @@ public class HealthStatePoster extends DatabasePoster
 		{
 			e.printStackTrace();
 		}
-		
 	}
 	
 	public HealthStatePostResult getHealthStatePostResult()

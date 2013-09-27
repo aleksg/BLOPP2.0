@@ -49,7 +49,6 @@ public class InstructionOptionsAdapter extends BaseAdapter
 	
 	public int getCount()
 	{
-		// TODO Auto-generated method stub
 		return options.length + 1;
 	}
 
@@ -59,13 +58,11 @@ public class InstructionOptionsAdapter extends BaseAdapter
 		{
 			return this.medicineListModel;
 		}
-		// TODO Auto-generated method stub
 		return options[position-1];
 	}
 
 	public long getItemId(int position)
 	{
-		// TODO Auto-generated method stub
 		return 0;
 	}
 

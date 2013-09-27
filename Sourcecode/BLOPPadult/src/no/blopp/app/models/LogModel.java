@@ -23,8 +23,6 @@ public class LogModel
 		logModelParser = new LogModelParser(childId);
 		initLogModelParser();
 	}
-
-
 	public LogModel(int childId, int month, int year)
 	{
 		this.childId=childId;
