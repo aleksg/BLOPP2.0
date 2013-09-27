@@ -30,8 +30,6 @@ public class MedicationInformationActivity extends Activity implements
 		medicineListView.setAdapter(new MedicineInstructionsListAdapter(getApplicationContext()));
 		medicineListView.setOnItemClickListener(this);
 	}
-
-	
 	
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id)
 	{
@@ -59,10 +57,8 @@ public class MedicationInformationActivity extends Activity implements
 		intent.putExtra("bitmapId", bytes);
 		startActivity(intent);
 
-
 	}
-	
-	
+		
 	private int getMedicineId(int position)
 	{
 		MedicineListModel model = (MedicineListModel)medicineListView.getItemAtPosition(position);

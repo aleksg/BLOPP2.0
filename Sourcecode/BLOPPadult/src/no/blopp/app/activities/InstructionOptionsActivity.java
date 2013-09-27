@@ -69,12 +69,6 @@ public class InstructionOptionsActivity extends Activity implements OnItemClickL
 		default: 
 			Log.d(TAG, "Noe gikk galt");
 		}
-		startActivity(intent);
-		
-		
-		
+		startActivity(intent);	
 	}
-	
-	
-
 }

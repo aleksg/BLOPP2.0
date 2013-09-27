@@ -9,6 +9,12 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+
+/**
+ * TODO: Where the hell is this being used???
+ * @author aarseth_90
+ *
+ */
 public class DetailedInstructionsAdapter extends BaseAdapter
 {
 	private String header;

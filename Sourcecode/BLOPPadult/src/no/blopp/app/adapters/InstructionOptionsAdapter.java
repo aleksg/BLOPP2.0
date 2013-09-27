@@ -122,8 +122,6 @@ public class InstructionOptionsAdapter extends BaseAdapter
 	
 	public class InstructionsOptionsModel
 	{
-		
-		
 		private OptionsIdentifier optionId;
 		private String option;
 		public InstructionsOptionsModel(String option, OptionsIdentifier optionId)

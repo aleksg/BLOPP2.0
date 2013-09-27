@@ -16,8 +16,7 @@ public class MedicationPlanParser extends GenericJSONParser
 	public MedicationPlanParser(int child_id)
 	{
 		
-		super(phpPage + "child_id=" + child_id);
-		
+		super(phpPage + "child_id=" + child_id);		
 	}
 
 	public void initializeDataFromJSON(String result)

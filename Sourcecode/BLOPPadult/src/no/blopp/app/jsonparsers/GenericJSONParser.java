@@ -43,8 +43,6 @@ public abstract class GenericJSONParser extends AsyncTask<Void, Void, Void> impl
 	@Override
 	protected Void doInBackground(Void... arg0)
 	{
-		
-		
 		result = "";
 		try
 		{

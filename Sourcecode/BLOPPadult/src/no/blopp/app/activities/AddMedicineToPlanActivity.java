@@ -43,12 +43,10 @@ public class AddMedicineToPlanActivity extends Activity implements
 		initializeSpinner();
 		initializeHealthState();
 		setUpListenerForButton(btnAddMedicine, R.id.add_medicine_button);
-				
+		
 		mLayout = (LinearLayout) findViewById(R.id.add_medicine_linearlayout);
-
 		timepickerMedicine = (TimePicker) findViewById(R.id.timePicker_medicine);
 		timepickerMedicine.setIs24HourView(true);
-
 	}
 	/**
 	 * Get the health state given the input from the last activity
@@ -140,5 +138,4 @@ public class AddMedicineToPlanActivity extends Activity implements
 		return poster.getPlanSuccessfullyPosted();
 	}
 
-	
 }

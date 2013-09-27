@@ -13,8 +13,6 @@ public class Child extends Person
 {
 	private MedicinePlanModel medicinePlanModel;
 	
-	
-
 	public Child(String name, String SSN)
 	{
 		super(name, SSN);

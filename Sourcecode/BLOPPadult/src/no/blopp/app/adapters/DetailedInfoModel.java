@@ -1,5 +1,11 @@
 package no.blopp.app.adapters;
 
+
+/**
+ * TODO: What the fuck is this?
+ * @author aarseth_90
+ *
+ */
 public class DetailedInfoModel
 {
 
