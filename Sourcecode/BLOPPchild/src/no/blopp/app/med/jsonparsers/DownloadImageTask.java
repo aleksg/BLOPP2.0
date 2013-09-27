@@ -10,7 +10,7 @@ import android.util.Log;
 
 public class DownloadImageTask extends AsyncTask<Void, Void, ArrayList<Bitmap>>{
 
-	
+	//Warning: URL
 	private static final String urlBody = "http://folk.ntnu.no/yngvesva/blopp/img/";
 	
 	private String imageUrl;

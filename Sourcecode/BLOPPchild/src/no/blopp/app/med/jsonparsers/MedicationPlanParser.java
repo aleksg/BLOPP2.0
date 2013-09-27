@@ -11,13 +11,13 @@ import org.json.JSONObject;
 
 public class MedicationPlanParser extends GenericParser
 {
+	//Warning: PHP-reference
 	public static String phpPage = "get_doses_for_current_state.php?";
 	private MedicationPlanResult medicationPlanResult;
 	public MedicationPlanParser(int child_id)
 	{
 		
 		super(phpPage + "child_id=" + child_id);
-		// TODO Auto-generated constructor stub
 	}
 
 	public void initializeDataFromJSON(String result)

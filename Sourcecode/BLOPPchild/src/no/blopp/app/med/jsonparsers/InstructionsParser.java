@@ -12,6 +12,8 @@ import android.util.Log;
 
 public class InstructionsParser extends GenericParser 
 {
+	//Warning: PHP-reference
+	//TODO: Cache images. Update every XX days or something
 	private static final String PHPPage = "get_instructions.php?";
 	private String url;
 	private ArrayList<Bitmap> bitmap;

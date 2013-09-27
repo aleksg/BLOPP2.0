@@ -18,6 +18,7 @@ public abstract class DatabasePoster extends AsyncTask<Void, Void, Void> impleme
 {
 //	register_medicine_taken.php
 	private HttpPost httpPost;
+	//Warning: database-URL
 	private String urlBody = "http://folk.ntnu.no/yngvesva/blopp/";
 	private String params;
 	/**
@@ -73,6 +74,7 @@ public abstract class DatabasePoster extends AsyncTask<Void, Void, Void> impleme
 		} 
 		return null;
 	}
+	
 	private String buildString(InputStream in, StringBuffer sb) throws IOException
 	{
 		String reply;

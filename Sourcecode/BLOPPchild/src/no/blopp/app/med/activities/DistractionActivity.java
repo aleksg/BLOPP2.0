@@ -158,6 +158,7 @@ public class DistractionActivity extends Activity {
 		}).play();
 	}
 	
+	//TODO: What is this?
 	public void action35s()
 	{
 		String color = getMedicineColor();
@@ -358,6 +359,7 @@ public class DistractionActivity extends Activity {
 		}).play();
 	}
 	
+	//TODO: Adapter should not be here
 	public class RewardsAdapter extends BaseAdapter
 	{
 		private Context context;

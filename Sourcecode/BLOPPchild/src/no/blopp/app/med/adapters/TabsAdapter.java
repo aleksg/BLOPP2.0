@@ -8,7 +8,7 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 
-public class TabsAdapter extends PagerAdapter{
+public class TabsAdapter extends PagerAdapter {
 
 	@Override
 	public int getCount() {

@@ -17,6 +17,7 @@ import android.util.Log;
 public abstract class GenericParser extends AsyncTask<Void, Void, Void> implements IInitializeFromJSON
 {
 	protected String TAG;
+	//Warning: URL
 	public static final String URLbody = "http://folk.ntnu.no/yngvesva/blopp/";
 	protected InputStream is;
 	protected HttpGet httpGet;

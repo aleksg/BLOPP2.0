@@ -10,6 +10,9 @@ import android.util.Log;
 
 public class ChildModelParser extends GenericParser
 {
+	/*
+	 * Warning: PHP-reference
+	 */
 	public static final String PHPPAGE = "get_child.php";
 	private ChildResultModel child;
 	

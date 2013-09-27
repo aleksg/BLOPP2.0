@@ -16,6 +16,7 @@ import android.util.Log;
 
 public class MedicineListParser extends GenericParser
 {
+	//Warning: PHP-reference
 	public static String phpPage = "get_medicine_list.php";
 	private ArrayList<Medicine> medicines;
 	private Context context;
@@ -49,7 +50,6 @@ public class MedicineListParser extends GenericParser
 		} catch (JSONException e)
 		{
 			Log.d("mlp", e.getMessage());
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -59,7 +59,9 @@ public class MedicineListParser extends GenericParser
 		return medicines;
 	}
 	
-	// TOO LITTLE TIME TO MAKE IMAGE DOWNLOADER
+	/*
+	 * TODO: TOO LITTLE TIME TO MAKE IMAGE DOWNLOADER
+	 */
 	public Bitmap medColorToBitmap(String color)
 	{
 		return BitmapFactory.decodeResource(context.getResources(), ColorMeds.medicineImage(color));

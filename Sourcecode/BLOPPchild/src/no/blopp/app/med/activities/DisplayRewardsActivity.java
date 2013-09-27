@@ -38,6 +38,7 @@ public class DisplayRewardsActivity extends Activity
 		countView.setText(Integer.toString(childRewards.getCredits()));
 	}
 	
+	//TODO: Move adapter
 	public class StarAdapter extends BaseAdapter
 	{
 		private Context context;
