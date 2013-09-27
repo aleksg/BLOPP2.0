@@ -63,6 +63,7 @@ public class LogResult
 		this.query = query;
 	}
 	
+	//TODO: Fix dates as SimpleDateFormat or something??
 	public int getHealthStateIdByDate(String d)
 	{
 		for (LogDayResult result : logDayResults)

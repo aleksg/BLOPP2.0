@@ -60,7 +60,7 @@ public class LogModel
 	 */
 	public HealthZone getHealthZoneAtDay(String date)
 	{
-		Log.d(TAG, date);
+//		Log.d(TAG, date);
 		int healthZoneId = logModelParser.getLogResult().getHealthStateIdByDate(date);
 		
 		if (healthZoneId!=-1)
@@ -91,7 +91,7 @@ public class LogModel
 			{
 				for (LogDosesModel dosesModel : ldr.getLogDosesList())
 				{
-					if(ldr.getLogDosesList().isEmpty()){Log.d("HALLO", "Hei ja");}
+					if(ldr.getLogDosesList().isEmpty()){Log.d(TAG, "Log doses is empty. Error?");}
 					int medicineId = dosesModel.getMedicineId();
 					/*
 					 * Accumulate results from past dosesModels.

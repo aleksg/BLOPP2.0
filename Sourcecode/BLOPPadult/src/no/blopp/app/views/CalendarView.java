@@ -171,7 +171,7 @@ public class CalendarView extends ImageView
 					//Get current date of month
 					int dayOfMonth = calendarArray[week][day].day;
 					//Get the date as a string
-					String date = getDate(dayOfMonth, monthDisplayHelper);
+					String date = getDate(dayOfMonth);
 					//Get the healthzone of the given date. 
 					HealthZone hz = logModel.getHealthZoneAtDay(date);
 					
@@ -429,9 +429,17 @@ public class CalendarView extends ImageView
 		}
 		return max;
 	}
-	private String getDate(int dayOfMonth, MonthDisplayHelper helper)
+	private String getDate(int dayOfMonth)
 	{
-		String date = "" + (monthDisplayHelper.getYear()) + "-" + (monthDisplayHelper.getMonth() + 1) + "-" + (dayOfMonth<=9 ? "0"+dayOfMonth : dayOfMonth);
+		int month = monthDisplayHelper.getMonth()+1;
+		String date = "" + (monthDisplayHelper.getYear()) + "-" + (month<=9 ? "0"+month:month) + "-" + (dayOfMonth<=9 ? "0"+dayOfMonth : dayOfMonth);
 		return date;
 	}
+	
+//	private String sqlFormattedDate(int dayOfMonth, MonthDisplayHelper helper)
+//	{
+//		int month = monthDisplayHelper.getMonth()+1;
+//		String date = (monthDisplayHelper.getYear()) + "-" + (month<=9 ? "0"+month : month) + ()
+//		return null;
+//	}
 }
