@@ -9,7 +9,6 @@ public class PollenStateAtDayModel
 	public PollenStateAtDayModel()
 	{
 		this.pollenStatesAtDay = new ArrayList<PollenState>();
-		// TODO Auto-generated constructor stub
 	}
 
 	public ArrayList<PollenState> getPollenStatesAtDay()

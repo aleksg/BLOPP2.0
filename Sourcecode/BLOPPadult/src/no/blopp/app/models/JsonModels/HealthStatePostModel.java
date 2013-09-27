@@ -18,7 +18,6 @@ public class HealthStatePostModel
 	}
 	public HealthStatePostModel()
 	{
-		// TODO Auto-generated constructor stub
 	}
 	public int getChildId()
 	{

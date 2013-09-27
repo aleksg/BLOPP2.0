@@ -38,7 +38,7 @@ public class AvailableMedicines
 				return s;
 			}
 		}
-		return "Dette ble feil. Slutt med det";
+		throw new IllegalArgumentException("Id out of scope from database");
 	}
 	
 }

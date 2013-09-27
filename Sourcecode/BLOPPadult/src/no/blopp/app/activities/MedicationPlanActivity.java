@@ -93,7 +93,7 @@ public class MedicationPlanActivity extends Activity implements
 		healthZones.add(HealthZone.YELLOW_ZONE);
 		healthZones.add(HealthZone.RED_ZONE);
 	}
-
+	//TODO:Assign to own file
 	public class MedicationPlanAdapter extends BaseAdapter implements
 			OnClickListener
 	{
@@ -212,6 +212,7 @@ public class MedicationPlanActivity extends Activity implements
 		 * @author aarseth_90
 		 * 
 		 */
+		//TODO: Assign to own file
 		public class PlanListItem
 		{
 			private String name;

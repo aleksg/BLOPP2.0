@@ -26,8 +26,8 @@ import no.blopp.app.med.models.*;
  */
 public class AlarmReceiverActivity extends Activity {
     private MedicinePlanModel medicinePlanModel;
-    private Ringtone r;
-    private AudioManager am;
+    private Ringtone ringtone;
+    private AudioManager audioManager;
     private int ringerMode;
     @SuppressWarnings("static-access")
 	@Override
@@ -48,21 +48,21 @@ public class AlarmReceiverActivity extends Activity {
         
         //Find the phones assigned alarmsound, and play it.
         Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
-        r = RingtoneManager.getRingtone(getApplicationContext(), notification);
-        r.play();
+        ringtone = RingtoneManager.getRingtone(getApplicationContext(), notification);
+        ringtone.play();
         
         //Set the phones ringer mode to be normal
-		am = (AudioManager)getSystemService(this.AUDIO_SERVICE);
-        ringerMode = am.getRingerMode();
-        am.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
+		audioManager = (AudioManager)getSystemService(this.AUDIO_SERVICE);
+        ringerMode = audioManager.getRingerMode();
+        audioManager.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
         
         
         //Button for stopping the alarm
         ImageView stopAlarm = (ImageView) findViewById(R.id.stop_alarm_imageview);
         stopAlarm.setOnClickListener(new OnClickListener() {
             public void onClick(View arg0) {
-            	r.stop();
-            	am.setRingerMode(ringerMode);
+            	ringtone.stop();
+            	audioManager.setRingerMode(ringerMode);
                 finish();
             }
         });
@@ -78,8 +78,8 @@ public class AlarmReceiverActivity extends Activity {
 				bundle.putSerializable("medicinePlanModel", medicinePlanModel);
 				intent.putExtras(bundle);
 				startActivity(intent);
-				r.stop();
-            	am.setRingerMode(ringerMode);
+				ringtone.stop();
+            	audioManager.setRingerMode(ringerMode);
 				finish();
 			}
 		});
@@ -93,6 +93,6 @@ public class AlarmReceiverActivity extends Activity {
     	ImageView imgv = (ImageView) findViewById(R.id.alarm_medicine_imageview);
     	TextView txtv = (TextView) findViewById(R.id.alarm_medicine_textview);
     	imgv.setImageResource(ColorMeds.medicineImage(medicinePlanModel.getMedicineColor()));
-		txtv.setText(String.format("Husk å ta %s!", medicinePlanModel.getMedicineName()));
+		txtv.setText(String.format("Husk Ã¥ ta %s!", medicinePlanModel.getMedicineName()));
 	}
 }

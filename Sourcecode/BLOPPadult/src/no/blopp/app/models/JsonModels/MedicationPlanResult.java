@@ -13,7 +13,6 @@ public class MedicationPlanResult
 	private ArrayList<MedicinePlanModel> plans;
 	public MedicationPlanResult()
 	{
-		// TODO Auto-generated constructor stub
 	}
 	public boolean isSqlSuccess()
 	{

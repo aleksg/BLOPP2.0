@@ -34,8 +34,7 @@ public class DownloadImageTask extends AsyncTask<Void, Void, ArrayList<Bitmap>>
 
 	/**
 	 * 
-	 * @param urls
-	 *            for each picture
+	 * @param urls for each picture
 	 */
 	public DownloadImageTask(ArrayList<String> imageUrls)
 	{
@@ -97,7 +96,6 @@ public class DownloadImageTask extends AsyncTask<Void, Void, ArrayList<Bitmap>>
 				Log.e("Error", e.getMessage());
 
 			}
-
 		}
 		return bitmaps;
 	}

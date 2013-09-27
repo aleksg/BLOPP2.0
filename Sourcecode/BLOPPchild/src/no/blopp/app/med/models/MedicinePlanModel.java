@@ -5,9 +5,6 @@ import java.io.Serializable;
 public class MedicinePlanModel implements Serializable
 {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1149525340444227051L;
 	private int id;
 	private String label;

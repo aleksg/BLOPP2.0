@@ -73,39 +73,35 @@ public class MainMenu extends Activity implements
 		Log.d("MainMenu", "got input on view: " + v.getId());
 		if (vid == R.id.treatment_button)
 		{
-			if (isConnectedToInternet())
-			{
-				activityStarter(DistractionActivity.class);
-
-			} else
-			{
-				makeConnectionToast();
-				return;
-			}
+			startDistraction();
 		} else if (vid == R.id.rewards_button)
 		{
-			if (isConnectedToInternet())
-			{
-				activityStarter(DisplayRewardsActivity.class);
-			}
-			else
-			{
-				makeConnectionToast();
-				return;
-			}
+			startDisplayRewards();
 		} else if (vid == R.id.instructions_button)
 		{
 			activityStarter(InstructionsActivity.class);
 		}
 		Log.d("MainMenu", "v.id()=" + v.getId());
 	}
-
-	/**
-	 * Starts the specified activity
-	 * 
-	 * @param c
-	 *            , the activity to be started.
-	 */
+	private void startDistraction(){
+		if (isConnectedToInternet())
+		{
+			activityStarter(DistractionActivity.class);
+		} else
+		{
+			makeConnectionToast();
+		}
+	}
+	private void startDisplayRewards(){
+		if (isConnectedToInternet())
+		{
+			activityStarter(DisplayRewardsActivity.class);
+		}
+		else
+		{
+			makeConnectionToast();
+		}
+	}
 	private void activityStarter(Class<?> c)
 	{
 		Log.d(c.getSimpleName(), "activityStarter");

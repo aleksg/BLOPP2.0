@@ -3,6 +3,8 @@ package no.blopp.app.adapters;
 import android.graphics.Bitmap;
 import android.widget.RadioButton;
 
+
+//TODO: Why is this class in adapters?
 public class MedicineListModel
 {
 	private Bitmap bitmap;

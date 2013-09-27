@@ -1,3 +1,5 @@
+//TODO: Remove entirely
+
 package no.blopp.app.jsonparsers;
 
 import java.sql.DriverManager;

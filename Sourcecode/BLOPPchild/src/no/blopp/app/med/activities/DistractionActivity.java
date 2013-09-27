@@ -252,12 +252,7 @@ public class DistractionActivity extends Activity {
 	}
 	
 	public void initPickMedicine()
-	{
-//		setContentView(R.layout.distraction_pick_medicine);
-		//medicine = new Medicine(1, "Flutide", 0, R.drawable.medicine_flutide_125microg, "PURPLE");
-		//healthStateId = 1;
-		//action1s();
-		
+	{	
 		setContentView(R.layout.medication_pick_medicine);
 		Log.d("ipm", "set content view");
 		final ListView listView = (ListView) findViewById(R.id.medicines_listView);

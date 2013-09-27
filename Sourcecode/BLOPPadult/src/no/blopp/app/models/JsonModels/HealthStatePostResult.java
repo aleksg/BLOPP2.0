@@ -6,7 +6,6 @@ public class HealthStatePostResult
 	
 	public HealthStatePostResult()
 	{
-		// TODO Auto-generated constructor stub
 	}
 	public boolean isSqlSuccess()
 	{
