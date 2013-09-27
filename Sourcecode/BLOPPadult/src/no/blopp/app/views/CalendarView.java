@@ -374,14 +374,6 @@ public class CalendarView extends ImageView
 		}
 
 	}
-
-//	public String getMonthOfYear()
-//	{
-//		int mMonth = monthDisplayHelper.getMonth();
-//		int year = monthDisplayHelper.getYear();
-//		return DateAdapter.getMonthText(mMonth) + year;
-//
-//	}
 	public MonthDisplayHelper getCalendarHelper()
 	{
 		return monthDisplayHelper;
@@ -435,11 +427,4 @@ public class CalendarView extends ImageView
 		String date = "" + (monthDisplayHelper.getYear()) + "-" + (month<=9 ? "0"+month:month) + "-" + (dayOfMonth<=9 ? "0"+dayOfMonth : dayOfMonth);
 		return date;
 	}
-	
-//	private String sqlFormattedDate(int dayOfMonth, MonthDisplayHelper helper)
-//	{
-//		int month = monthDisplayHelper.getMonth()+1;
-//		String date = (monthDisplayHelper.getYear()) + "-" + (month<=9 ? "0"+month : month) + ()
-//		return null;
-//	}
 }

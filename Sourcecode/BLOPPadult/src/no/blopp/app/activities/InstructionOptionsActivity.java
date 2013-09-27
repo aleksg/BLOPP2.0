@@ -22,7 +22,6 @@ public class InstructionOptionsActivity extends Activity implements OnItemClickL
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.medicine_instructions);
 		
@@ -30,12 +29,10 @@ public class InstructionOptionsActivity extends Activity implements OnItemClickL
 		Intent intent = this.getIntent();
 		Bundle bundle = intent.getExtras();
 		
-
 		this.medicineName = bundle.getString("name");
 		this.desc = bundle.getString("desc");
 		listView.setAdapter(new InstructionOptionsAdapter(medicineName, desc, getApplicationContext()));
 		listView.setOnItemClickListener(this);
-		
 	}
 	/**
 	 * Redirects to next activity
@@ -56,8 +53,6 @@ public class InstructionOptionsActivity extends Activity implements OnItemClickL
 			intent = new Intent(InstructionOptionsActivity.this, InstructionSlideShowActivity.class);
 			startActivity(intent);
 			return;
-
-			
 		case INFO:
 			intent.putExtra("Name", this.medicineName);
 			intent.putExtra("Option", "INFO");

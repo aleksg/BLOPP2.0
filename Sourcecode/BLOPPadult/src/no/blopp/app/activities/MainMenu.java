@@ -50,7 +50,6 @@ public class MainMenu extends Activity implements OnItemClickListener
 
 	/*
 	 * Blocks input to activities that needs internet connection.
-	 * 
 	 */
 	public void reactToInput(MenuOptions option)
 	{
@@ -58,43 +57,57 @@ public class MainMenu extends Activity implements OnItemClickListener
 		if (option.equals(MenuOptions.INSTRUCTIONS))
 		{
 			activityStarter(MedicationInformationActivity.class);
-
 		} else if (option.equals(MenuOptions.TREATMENT))
 		{
-			
-			if(isConnectedToInternet())
-			{
-				activityStarter(TreatmentActivity.class);				
-			}else{
-				makeConnectionToast();
-			}
-
+			startTreatment();
 		} else if (option.equals(MenuOptions.LOG))
 		{
-			if (isConnectedToInternet())
-			{
-				activityStarter(CalendarActivity.class);
-			} else
-			{
-				makeConnectionToast();
-				return;
-			}
-
+			startCalendar();
 		} else if (option.equals(MenuOptions.MANUAL))
 		{
 			activityStarter(InstructionSlideShowActivity.class);
-
 		} else if (option.equals(MenuOptions.PLAN))
 		{
-			if(isConnectedToInternet()){
-			activityStarter(MedicationPlanActivity.class);
-			}
-			else{
-				makeConnectionToast();
-				return;
-			}
+			startPlan();
 		}
 	}
+
+	private void startCalendar()
+	{
+		if (isConnectedToInternet())
+		{
+			activityStarter(CalendarActivity.class);
+		} else
+		{
+			makeConnectionToast();
+			return;
+		}
+	}
+
+	private void startPlan()
+	{
+		if (isConnectedToInternet())
+		{
+			activityStarter(MedicationPlanActivity.class);
+		} else
+		{
+			makeConnectionToast();
+			return;
+		}
+		
+	}
+
+	private void startTreatment()
+	{
+		if (isConnectedToInternet())
+		{
+			activityStarter(TreatmentActivity.class);
+		} else
+		{
+			makeConnectionToast();
+		}
+	}
+
 	/**
 	 * 
 	 * @return a boolean, true if the device is connected to internet.
@@ -108,8 +121,9 @@ public class MainMenu extends Activity implements OnItemClickListener
 
 		return activeNetworkInfo != null;
 	}
+
 	/**
-	 * Give the user a notice that the device is not connected to internet. 
+	 * Give the user a notice that the device is not connected to internet.
 	 */
 	private void makeConnectionToast()
 	{

@@ -15,7 +15,6 @@ public class MedicationPlanParser extends GenericJSONParser
 	private MedicationPlanResult medicationPlanResult;
 	public MedicationPlanParser(int child_id)
 	{
-		
 		super(phpPage + "child_id=" + child_id);		
 	}
 
@@ -35,7 +34,6 @@ public class MedicationPlanParser extends GenericJSONParser
 			
 			for(int i=0; i<array.length(); i++)
 			{
-				
 				
 				JSONObject plan = array.getJSONObject(i);
 				int healthStateId = (plan.getInt("health_state_id"));
@@ -60,14 +58,12 @@ public class MedicationPlanParser extends GenericJSONParser
 				}
 				
 			}
-			medicationPlanResult.setPlans(arrayList);
-			
+			medicationPlanResult.setPlans(arrayList);	
 		} catch (JSONException e)
 		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
 	public MedicationPlanResult medicationPlanResult()
 	{
@@ -79,11 +75,8 @@ public class MedicationPlanParser extends GenericJSONParser
 		{
 			if(model.getHealthStateId()==healthStateId){
 				return model;
-			}
-			
+			}		
 		}
 		return null;
 	}
-	
-
 }

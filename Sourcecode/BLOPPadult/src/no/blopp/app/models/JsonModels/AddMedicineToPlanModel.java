@@ -22,7 +22,7 @@ public class AddMedicineToPlanModel
 	}
 	public AddMedicineToPlanModel()
 	{
-		// TODO Auto-generated constructor stub
+
 	}
 	public int getChildId()
 	{

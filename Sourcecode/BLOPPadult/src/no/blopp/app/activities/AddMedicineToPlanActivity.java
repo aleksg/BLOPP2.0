@@ -96,20 +96,14 @@ public class AddMedicineToPlanActivity extends Activity implements
 			
 			if (!(wasSuccess))
 			{
-
-				Toast t = Toast
-						.makeText(
-								this,
-								R.string.post_error,
-								Toast.LENGTH_LONG);
+				Toast t = Toast.makeText(this,R.string.post_error,Toast.LENGTH_LONG);
 				t.show();
 				return;
 			}
 			Intent resultIntent = new Intent();
-			// resultIntent.putExtra("BACKFIRE", aml);
+			
 			setResult(Activity.RESULT_OK, resultIntent);
 			finish();
-
 		}
 	}
 

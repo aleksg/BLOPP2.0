@@ -39,6 +39,8 @@ import android.widget.Toast;
  * An activity that lists all the health states, where you can press each
  * healthstate to view the medicationplan for that state.
  */
+
+//TODO: How on earth is this class 300 lines? Break it down!
 public class MedicationPlanActivity extends Activity implements
 		OnItemClickListener
 {
@@ -78,7 +80,6 @@ public class MedicationPlanActivity extends Activity implements
 		
 		intent.putExtras(bundle);
 		startActivity(intent);
-
 	}
 	
 	/**

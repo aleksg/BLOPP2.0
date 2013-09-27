@@ -77,8 +77,6 @@ public class CalendarActivity extends Activity implements
 		
 		previousMonthButton = (Button) findViewById(R.id.prev_month_button);
 		previousMonthButton.setOnClickListener(this);
-
-		
 		
 		monthTextView = (TextView) findViewById(R.id.month_of_year_textview);
 		updateMonthTextField();
@@ -155,22 +153,14 @@ public class CalendarActivity extends Activity implements
 		updateDates();
 		refreshMedicinesTaken(day, month, year);
 	}
-	/**
-	 * Helper to redraw medicineTakenListView. 
-	 * @param day
-	 * @param month
-	 * @param year
-	 */
+	
 	private void refreshMedicinesTaken(int day, int month, int year)
 	{
 		dateAdapter = new DateAdapter(day, month, year);
 		medicineTakenListView.setAdapter(new TakenMedicinesAdapter(getApplicationContext(), getAmountOfMedicinesTaken()));		
 		makeToast(day+"-"+month+"-"+year, Toast.LENGTH_SHORT);
 	}
-	/**
-	 * 
-	 * @return a hashmap with medicineId as key and number of times this medicine has been used as value
-	 */
+
 	private HashMap<Integer, Integer> getAmountOfMedicinesTaken()
 	{
 		return logModel.getAmountOfMedicineAtDate(dateAdapter.getSqlFormattedDate());
@@ -201,7 +191,7 @@ public class CalendarActivity extends Activity implements
 		return pollenCast.getPollenStateAtDayModel().getPollenStatesAtDay();
 		
 	}
-	/**
+	/*
 	 * Used to infrom the user about which date is set.
 	 * @param toastMessage, date to be displayed or the error message. 
 	 * @param length

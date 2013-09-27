@@ -36,8 +36,6 @@ public class AlarmReceiverActivity extends Activity {
                 finish();
                 return false;
             }
-
-			
         });
  
         playSound(this, getAlarmUri());
@@ -61,6 +59,7 @@ public class AlarmReceiverActivity extends Activity {
  
         //Get an alarm sound. Try for an alarm. If none set, try notification, 
         //Otherwise, ringtone.
+    	//TODO: Why exactly is this being used here?
     private Uri getAlarmUri() {
         Uri alert = RingtoneManager
                 .getDefaultUri(RingtoneManager.TYPE_ALARM);

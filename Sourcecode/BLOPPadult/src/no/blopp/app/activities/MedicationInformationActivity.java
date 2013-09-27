@@ -33,20 +33,13 @@ public class MedicationInformationActivity extends Activity implements
 	
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id)
 	{
-		/*
-		 * find medicine id, then go to next step with this id.
-		 */
 		int medicineId = getMedicineId(position);
 		AvailableMedicines am = new AvailableMedicines();
 		String medicineName = am.getMedicineById(medicineId);
 		MedicineListModel model = (MedicineListModel) parent.getItemAtPosition(position);
 		
 		//Convert the bitmap to bytearray and pass it to InstructionsActivity
-		Bitmap bmp = model.getBitmap();
-		ByteArrayOutputStream stream = new ByteArrayOutputStream();
-		bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
-		byte[] byteArray = stream.toByteArray();
-		String bytes = byteArray.toString();
+		String bytes = getBytesFromImage(model.getBitmap());
 		
 		String desc = model.getDescription();
 		
@@ -58,7 +51,12 @@ public class MedicationInformationActivity extends Activity implements
 		startActivity(intent);
 
 	}
-		
+	private String getBytesFromImage(Bitmap bitmap)
+	{
+		ByteArrayOutputStream stream = new ByteArrayOutputStream();
+		bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+		return stream.toByteArray().toString();	
+	}
 	private int getMedicineId(int position)
 	{
 		MedicineListModel model = (MedicineListModel)medicineListView.getItemAtPosition(position);

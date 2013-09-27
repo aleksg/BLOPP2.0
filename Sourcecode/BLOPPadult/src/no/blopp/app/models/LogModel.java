@@ -65,7 +65,6 @@ public class LogModel
 		
 		if (healthZoneId!=-1)
 		{
-			
 			return HealthState.getHealthZoneById(healthZoneId);
 		} else
 		{

@@ -128,7 +128,6 @@ public class TreatmentActivity extends Activity implements OnClickListener
 		}
 		RegisterMedicinePostModel model = new RegisterMedicinePostModel(date,
 				medicineId, CHILD_ID, healthStateId);
-		
 		PostRegisterTreatment poster = new PostRegisterTreatment(
 				model.toString());
 		//Execute the post
