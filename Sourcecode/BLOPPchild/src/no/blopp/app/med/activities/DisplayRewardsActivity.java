@@ -64,22 +64,6 @@ public class DisplayRewardsActivity extends Activity
 
 		public View getView(int position, View convertView, ViewGroup parent)
 		{
-			// the first square should be a text view with the number of stars
-			// while the rest are images of stars
-//			if (position == 0)
-//			{
-//				if (convertView == null)
-//				{
-//					TextView textView = new TextView(context);
-//					textView.setText(Integer.toString(childRewards.getCredits()));
-//					textView.setGravity(Gravity.CENTER);
-//					return textView;
-//				}
-//				else
-//				{
-//					return convertView;
-//				}
-//			}
 			ImageView imageView;
 			if (convertView == null)
 			{

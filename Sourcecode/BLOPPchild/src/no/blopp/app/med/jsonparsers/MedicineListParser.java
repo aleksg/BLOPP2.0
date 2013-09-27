@@ -49,7 +49,6 @@ public class MedicineListParser extends GenericParser
 		} catch (JSONException e)
 		{
 			Log.d("mlp", e.getMessage());
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

@@ -153,8 +153,7 @@ public class AlarmUpdateReceiver extends BroadcastReceiver {
         	alarmManager.cancel(pendingIntent);
         	alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);  	
         }
-        //else
-        	//Log.d("ALARM","Already set");
+    
     }
 
     @SuppressWarnings("static-access")
